@@ -1,2 +1,2 @@
-# Mohammedamaan-Ahmedabadi-UiUx
+# Mohammedamaan-Ahmedabadi
 Portfolio
