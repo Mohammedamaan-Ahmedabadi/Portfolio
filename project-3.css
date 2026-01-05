@@ -1,488 +1,496 @@
-<!-- project-2.html -->
-<!doctype html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>A Centralized Calendar for Algonquin College Students</title>
-  <meta name="description" content="Case study: A Centralized Calendar for Algonquin College Students." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap"
-    rel="stylesheet">
-
-  <!-- Main site CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <!-- Page-only CSS -->
-  <link rel="stylesheet" href="project-3.css" />
-</head>
-
-<body class="project-page project-3">
-  <!-- Header (same as project 1) -->
-  <header>
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Go to home">
-        <img src="assets/logo.png" alt="Amaan logo" class="brand-logo" />
-      </a>
-
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="resume.pdf" target="_blank" rel="noopener">My Resume</a>
-      </nav>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-    </div>
-
-    <div class="mobile-menu" id="mobileMenu" hidden>
-      <div class="container mobile-menu-inner">
-        <a class="mobile-link" href="index.html">Home</a>
-        <a class="mobile-link" href="about.html">About</a>
-        <a class="mobile-link" href="resume.pdf" target="_blank" rel="noopener">My Resume</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="container cs">
-    <!-- Top back pill like screenshot -->
-    <div class="cs-topbar">
-      <a class="cs-backpill" href="index.html">← Back to home</a>
-    </div>
-
-    <!-- HERO CARD -->
-    <section class="cs-hero" aria-label="Case study hero">
-      <div class="cs-hero-card cs2-hero">
-        <div class="cs-hero-top">
-          <span class="cs-pill">Case Study</span>
-        </div>
-        <div class="cs-hero-grid cs2-hero-grid">
-          <aside class="cs-hero-meta cs2-meta">
-            <div class="cs-meta-item">
-              <div class="cs-meta-label">Role:</div>
-              <div class="cs-meta-value">UX Researcher</div>
-            </div>
-            <div class="cs-meta-item">
-              <div class="cs-meta-label">Team:</div>
-              <div class="cs-meta-value">Amaan, Choung, Maria, Hemant, Pragya</div>
-            </div>
-            <div class="cs-meta-item">
-              <div class="cs-meta-label">Timeline:</div>
-              <div class="cs-meta-value">15 weeks</div>
-            </div>
-          </aside>
-
-          <div class="cs-hero-main">
-            <h1 class="cs-title">A Centralized Calendar for Algonquin College Students</h1>
-            <p class="cs-lede">
-              This project focused on understanding how first-semester students at Algonquin College manage their
-              academic
-              and personal schedules using college-provided calendars, personal tools, and informal workarounds.
-              We conducted surveys, interviews, and co-creation activities to identify key friction points and propose
-              improvements for a more clear, accessible, and student-friendly calendar system.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BODY -->
-    <section class="cs-body">
-      <!-- LEFT mini nav -->
-      <nav class="cs-side" aria-label="Case study sections">
-        <a href="#context">Context</a>
-        <a href="#problem">Problem Space</a>
-        <a href="#objective">Objective</a>
-        <a href="#methodology">Methodology</a>
-        <a href="#participants">Participants</a>
-        <a href="#findings">Findings</a>
-        <a href="#persona">Persona</a>
-        <a href="#scenario">User Scenario</a>
-        <a href="#journey">Journey Map</a>
-        <a href="#insights">Insights & Recommendations</a>
-        <a href="#limitations">Limitations</a>
-        <a href="#learning">Learning</a>
-      </nav>
-
-      <!-- MAIN -->
-      <article class="cs-main">
-        <section class="cs-section" id="context">
-          <h2>Context</h2>
-          <p>
-            Transitioning into college life can be both exciting and overwhelming—especially for new students at
-            Algonquin College. For international students, the challenge is often greater as they adjust not only to
-            academic expectations but also to a new culture, environment, and support systems. Managing time effectively
-            becomes crucial for balancing academic responsibilities, part-time work, and personal life.
-
-            <br><br>To support student success, Algonquin College provides a variety of digital calendars that outline
-            academic schedules, campus events, and other key activities. While these resources are intended to help
-            students stay organized, new students may not always find them intuitive or easy to use. Navigating between
-            multiple calendars, understanding their specific purposes, and integrating them into daily planning can be a
-            confusing experience—especially during the critical early weeks of the semester.
-          </p>
-        </section>
-
-        <section class="cs-section" id="problem">
-          <h2>Problem Space</h2>
-
-          <!-- Text + illustration like screenshot -->
-          <div class="cs-split">
-            <div class="cs-split-text">
-              <p>
-                Despite the availability of college-provided calendars, many new students face challenges in effectively
-                using them to manage their academic and extracurricular responsibilities. This is particularly true for
-                international students who may be less familiar with the systems and expectations of post-secondary
-                education in Canada.
-              </p>
-
-              <p class="cs-sublead">
-                <strong>Students often struggle to:</strong>
-              </p>
-              <ul class="cs-ul">
-                <li>Identify the most relevant calendars from a range of options</li>
-                <li>Access and interpret calendar information across multiple platforms</li>
-                <li>Integrate college calendars with personal scheduling tools</li>
-                <li>Maintain consistency and clarity in their planning habits</li>
-              </ul>
-
-            </div>
-
-            <figure class="cs-figure cs-figure-illus">
-              <img src="assets/problem.avif" alt="Placeholder illustration" />
-            </figure>
-          </div>
-        </section>
-
-        <section class="cs-section" id="objective">
-          <h2>Objective</h2>
-          <p>
-            This study aims to better understand how new students interact with college-provided calendars and how those
-            interactions affect their ability to manage academic and personal responsibilities. Specifically, the study
-            seeks to:
-          </p>
-
-          <div class="cs-objectives">
-            <div class="cs-obj-card">
-              <h3 class="cs-obj-title">Objective 1</h3>
-              <p> Identify how students currently manage their schedules, including their preferred tools, frequency of
-                use, and awareness of Algonquin College’s calendar systems.</p>
-            </div>
-            <div class="cs-obj-card">
-              <h3 class="cs-obj-title">Objective 2</h3>
-              <p>Explore students’ experiences with using multiple calendars, uncovering the tools they use, common
-                challenges they face, and the features they value most.</p>
-            </div>
-            <div class="cs-obj-card">
-              <h3 class="cs-obj-title">Objective 3</h3>
-              <p>Evaluate students’ overall perceptions of the college calendars, examining barriers, coping strategies,
-                and opportunities for improvement.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="cs-section cs-methodology" id="methodology">
-          <h2>Methodology</h2>
-
-          <div class="cs-method-grid">
-            <!-- LEFT: text -->
-            <div class="cs-method-text">
-              <p class="cs-method-intro">
-                To understand how new students at Algonquin College engage with college-provided calendars,
-                we used a mixed-method approach combining surveys and interviews.
-              </p>
-
-              <h3 class="cs-method-phase">Phase 1: Survey</h3>
-              <p>
-                We began with a short survey designed to gather quantitative insights and screen participants for
-                interviews.
-                The survey included a consent form and was shared through posters, student groups, and in-person
-                outreach.
-                Our goal was to collect 100 responses from Level 1 students.
-              </p>
-
-              <h3 class="cs-method-phase">Phase 2: Semi-Structured Interviews</h3>
-              <p>
-                From the survey respondents, we selected participants for in-depth, semi-structured interviews to
-                explore
-                their experiences in more detail. We aimed to conduct 10 interviews. Each session was led by one
-                interviewer
-                and one notetaker, with participant permission to record the conversation for accuracy and analysis.
-              </p>
-
-              <p class="cs-method-outro">
-                This approach allowed us to gather both broad trends and personal insights to better understand the
-                calendar
-                usage experience from a student perspective.
-              </p>
-            </div>
-
-            <!-- RIGHT: two illustrations -->
-            <div class="cs-method-illus">
-              <figure class="cs-illus">
-                <img src="assets/Survry phase1.avif" alt="Methodology illustration 1" />
-              </figure>
-
-              <figure class="cs-illus">
-                <img src="assets/interview phase2.avif" alt="Methodology illustration 2" />
-              </figure>
-            </div>
-          </div>
-        </section>
-
-        <section class="cs-section" id="participants">
-          <h2>Participants</h2>
-          <p>
-            This research focused on first-semester students at Algonquin College, as they are best positioned to share
-            early experiences with the college's calendar system.
-            We collected survey responses from 126 new students to understand general patterns and challenges. From this
-            group, 10 participants were selected for follow-up semi-structured interviews to gain deeper insights into
-            their experiences and needs.
-          </p>
-        </section>
-
-        <section class="cs-section cs-findings-2" id="findings">
-          <h2>Findings</h2>
-
-          <h3 class="cs-subtitle blue">Survey Findings</h3>
-
-          <p class="cs-lead blue">
-            We collected survey responses from 126 students, 102 of whom were in their first semester at Algonquin
-            College.
-            Of these, 60 were international and 42 were domestic students, offering a balanced view of early student
-            experiences.
-          </p>
-
-          <!-- Row 1: Chart + Chart + Text block -->
-          <div class="find-grid find-grid-top">
-            <figure class="find-chart">
-              <img src="assets/chart1.avif" alt="Survey chart 1" />
-            </figure>
-
-            <figure class="find-chart">
-              <img src="assets/chart2.avif" alt="Survey chart 2" />
-            </figure>
-
-            <div class="find-text">
-              <h4>Usage &amp; Awareness</h4>
-              <p>
-                Calendar usage varied: 35 students checked the college calendar daily, while others used it weekly or
-                occasionally.
-                Brightspace was the most recognized and used tool, followed by ACSIS and the Pulse app. Awareness of
-                other platforms
-                like ICENT, IEC Calendar, and Outlook was significantly lower.
-              </p>
-            </div>
-          </div>
-
-          <!-- Row 2: Text block + Chart + Chart -->
-          <div class="find-grid find-grid-mid">
-            <div class="find-text">
-              <h4>Preferences &amp; Satisfaction</h4>
-              <p>
-                Brightspace, Pulse, and ACSIS were the most preferred tools, but satisfaction levels were generally low.
-                Around 60% of students expressed dissatisfaction or neutrality toward the current systems, highlighting
-                a need
-                for a more integrated and user-friendly calendar solution.
-              </p>
-            </div>
-
-            <figure class="find-chart">
-              <img src="assets/chart3.avif" alt="Survey chart 3" />
-            </figure>
-
-            <figure class="find-chart">
-              <img src="assets/chart4.avif" alt="Survey chart 4" />
-            </figure>
-          </div>
-
-          <!-- Row 3: Chart + Chart + Text block -->
-          <div class="find-grid find-grid-bot">
-            <figure class="find-chart">
-              <img src="assets/chart5.avif" alt="Survey chart 5" />
-            </figure>
-
-            <figure class="find-chart">
-              <img src="assets/chart6.avif" alt="Survey chart 6" />
-            </figure>
-
-            <div class="find-text">
-              <h4>Alternative Tools &amp; Methods</h4>
-              <p>
-                Some students used personal tools like Google Calendar, Apple Notes, or physical planners. A few relied
-                solely on
-                memory. These mixed approaches suggest a lack of consistency and point to the need for a centralized
-                calendar
-                system that better supports student planning needs.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- INTERVIEW FINDINGS  -->
-        <section class="cs-section cs-interview-2" id="interview-findings">
-          <h3 class="cs-subtitle blue">Interview Findings</h3>
-
-          <div class="iv-top">
-            <div class="iv-copy">
-              <p class="iv-lead blue">
-                To gain deeper insights into students’ scheduling experiences, we conducted semi-structured interviews
-                with
-                10 first-semester students (2 domestic, 8 international). Key themes emerged around how students manage
-                their
-                time and interact with the college’s calendar tools:
-                <br><span class="iv-inline">Balancing School &amp; Life</span>
-              </p>
-
-              <p class="blue">
-                Students strive to balance academics, extracurriculars, and personal life, often prioritizing immediate
-                tasks
-                over long-term planning. International students, in particular, emphasized the importance of integrating
-                into
-                their new environment while staying on top of schoolwork.
-              </p>
-            </div>
-
-            <figure class="iv-illu">
-              <img src="assets/Findings.avif" alt="Interview illustration placeholder" />
-            </figure>
-          </div>
-
-          <div class="iv-item">
-            <h3>Fragmented Tools</h3>
-            <p>
-              Students use a mix of physical and digital tools—planners, apps, notes, and widgets—which often leads to
-              disorganization. The lack of integration across platforms creates confusion and extra effort to manage
-              their
-              schedules.
-            </p>
-          </div>
-
-          <div class="iv-item">
-            <h3>Need for Integration</h3>
-            <p>
-              Participants highlighted the need for a centralized system that syncs academic and personal commitments
-              across
-              devices. Current tools like Brightspace don’t integrate well with personal calendars, resulting in missed
-              deadlines and added stress.
-            </p>
-          </div>
-
-          <div class="iv-item">
-            <h3>Positive Highlights</h3>
-            <p>
-              The Pulse app stood out as a favorite for its intuitive interface and helpful features like visual task
-              tracking
-              and reminders. These features were seen as effective and should be considered in future design
-              improvements.
-            </p>
-          </div>
-        </section>
-
-
-
-
-        <section class="cs-section" id="persona">
-          <h2>Persona</h2>
-          <figure class="cs-persona-photo cs2-persona-photo">
-            <img src="assets/persona.avif" alt="Persona photo placeholder" />
-          </figure>
-
-        </section>
-
-        <section class="cs-section" id="scenario">
-          <h2>User Scenario</h2>
-          <figure class="cs-persona-photo cs2-persona-photo">
-            <img src="assets/us.avif" alt="Persona photo placeholder" />
-          </figure>
-
-        </section>
-
-        <section class="cs-section " id="journey">
-          <h2>Journey Map</h2>
-          <figure class="cs-figure cs-zoom" id="journey">
-            <img class="cs-zoom-img" src="assets/journey Map2.avif" alt="Journey map" />
-            <div class="cs-zoom-lens" aria-hidden="true"></div>
-          </figure>
-        </section>
-
-        <section class="cs-section" id="insights">
-          <h2>Insights & Recommendations</h2>
-          <p>Based on the research findings, several clear opportunities for improvement emerged:</p>
-          <ol class="cs-ol">
-            <li><strong>Centralized Calendar Integration</strong> Students need a unified platform that combines
-              institutional tools with personal calendars like Google or Apple Calendar. Features like real-time
-              notifications, task tracking, and multi-device syncing would streamline time management and reduce
-              confusion.</li>
-            <li><strong>Improved Accessibility</strong> Navigation and usability of current calendar tools should be
-              enhanced, especially on mobile. Clear onboarding, intuitive interfaces, and better compatibility will
-              reduce reliance on memory or informal methods like handwritten notes.</li>
-            <li><strong>Flexible Scheduling Tools</strong> Students benefit from dynamic scheduling features such as
-              drag-and-drop task management, weekly views, and built-in collaboration tools. Flexibility is key to
-              handling varied academic and personal responsibilities.</li>
-            <li><strong>Visual & Interactive Elements</strong> Incorporating visual aids—like progress bars, timeline
-              views, and reminders—can boost user engagement. Pulse app features stood out and could inspire
-              enhancements across all calendar platforms.</li>
-          </ol>
-        </section>
-
-        <section class="cs-section" id="limitations">
-          <h2>Limitations</h2>
-          <p>
-            While this study offers useful insights, there are a few limitations to consider. Most participants were
-            international students, with limited input from domestic students—meaning the findings may not fully reflect
-            the broader student population. Additionally, the small sample size and absence of subject matter expert
-            (SME) perspectives may limit the depth and generalizability of the results. Responses were also influenced
-            by personal experiences, which could introduce bias.
-          </p>
-        </section>
-
-        <section class="cs-section" id="learning">
-          <h2>Learning</h2>
-          <p>
-            This project highlighted the complexity students face in managing multiple calendars and how fragmented
-            tools can impact their academic and personal balance. I learned the value of combining surveys with
-            interviews to uncover both broad trends and deeper user insights. It reinforced the importance of designing
-            centralized, user-friendly solutions with flexible and visual features tailored to students' needs. Most
-            importantly, it taught me that even simple tools like calendars require thoughtful, user-centered design to
-            truly support the people using them.
-          </p>
-
-          <div class="cs-back-row">
-            <a class="btn" href="index.html">← Back to Home</a>
-          </div>
-        </section>
-      </article>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner footer-centered">
-      <img src="assets/logo.png" alt="Amaan logo" class="footer-logo" />
-      <h3 class="footer-title">Let’s connect — I reply faster than your Wi-Fi 😄</h3>
-
-      <div class="footer-email">
-        <a href="mailto:amaanahmedabadi007@gmail.com">amaanahmedabadi007@gmail.com</a>
-      </div>
-
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a>
-        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-      </div>
-
-      <p class="copyright">
-        © <span id="year"></span> Amaan Ahmedabadi. All rights reserved.
-      </p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-
-</html>
+/* =========================================================
+   PROJECT 3 (project-2.html in your msg) — PAGE ONLY CSS
+   File: project-3.css
+   - Only affects this page: body.project-page.project-3
+   - No cropping for charts/figures (keeps aspect ratio)
+   - Header/Footer logos NOT affected
+   - Interview illustration sizing fixed (big like screenshot)
+   - Duplicates/conflicts removed
+========================================================= */
+
+/* =========================
+   PAGE BACKGROUND
+========================= */
+body.project-page.project-3{
+  background:#ffffff !important;
+}
+
+/* Keep wrapper logic */
+body.project-page.project-3 .cs{ max-width: var(--max); }
+
+/* =========================
+   TOP BACK PILL
+========================= */
+
+body.project-page.project-3 .cs-topbar{
+  display:flex;
+  justify-content:flex-start;
+  margin:14px 0 6px;
+}
+
+body.project-page.project-3 .cs-backpill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  font-weight:800;
+  font-size:12px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(17,19,24,.12);
+  background:rgba(255,255,255,.75);
+  color:rgba(17,19,24,.86);
+}
+body.project-page.project-3 .cs-backpill:hover{
+  background:rgba(255,255,255,.95);
+}
+
+/* =========================
+   HERO (Green theme like screenshot)
+========================= */
+.cs-hero-top{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  padding:14px 16px 8px;
+}
+
+.cs-pill{
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.55);
+  border:1px solid rgba(17,19,24,.10);
+}
+
+body.project-page.project-3 .cs-hero{ padding-top:8px; }
+
+body.project-page.project-3 .cs-hero-card.cs2-hero{
+  border-radius:24px;
+  background:rgba(16, 86, 54, 0.13);
+  border:1px solid rgba(17,19,24,.10);
+  box-shadow:0 18px 55px rgba(17,19,24,.10);
+  overflow:hidden;
+}
+
+body.project-page.project-3 .cs2-hero-grid{
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:18px;
+  padding:10px 16px 18px;
+  align-items:start;
+}
+
+body.project-page.project-3 .cs2-meta{
+  background:rgba(16, 86, 55, .94);
+  border:1px solid rgba(17,19,24,.12);
+  border-radius:18px;
+  padding:14px;
+  display:grid;
+  gap:14px;
+}
+
+body.project-page.project-3 .cs2-meta .cs-meta-label{
+  color:rgba(255,255,255,.82);
+  font-weight:900;
+  text-transform:none;
+  letter-spacing:0;
+  font-size:12px;
+}
+
+body.project-page.project-3 .cs2-meta .cs-meta-value{
+  color:#ffffff;
+  font-weight:800;
+}
+
+body.project-page.project-3 .cs-title{
+  font-family:var(--font-serif);
+  font-size:clamp(26px, 3vw, 42px);
+  margin:4px 0 10px;
+  letter-spacing:-.02em;
+}
+
+body.project-page.project-3 .cs-lede{
+  margin:0;
+  color:rgba(17,19,24,.76);
+  line-height:1.75;
+  max-width:78ch;
+}
+
+/* =========================
+   BODY LAYOUT + MINI NAV
+========================= */
+body.project-page.project-3 .cs-body{
+  display:grid;
+  grid-template-columns:200px 1fr;
+  gap:26px;
+  margin-top:18px;
+}
+
+body.project-page.project-3 .cs-side{
+  position:sticky;
+  top:120px;
+  align-self:start;
+
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+
+  padding:12px;
+  border-radius:18px;
+  background:rgba(16, 86, 54, 0.089);
+  border:1px solid rgba(17,19,24,.10);
+}
+
+body.project-page.project-3 .cs-side a{
+  text-decoration:none;
+  color:rgba(17,19,24,.78);
+  font-weight:800;
+  padding:10px 10px;
+  border-radius:14px;
+  border:1px solid rgba(17,19,24,.08);
+  background:rgba(255,255,255,.55);
+}
+body.project-page.project-3 .cs-side a:hover{
+  background:rgba(255,255,255,.92);
+  color:rgba(17,19,24,.92);
+}
+
+/* =========================
+   SECTION TYPOGRAPHY
+========================= */
+body.project-page.project-3 .cs-section{
+  padding:14px 0 4px;
+  border-bottom:1px solid rgba(17,19,24,.06);
+  margin-bottom:16px;
+
+  /* center scroll when clicking mini nav */
+  scroll-margin-top:40vh;
+  scroll-margin-bottom:40vh;
+}
+
+body.project-page.project-3 .cs-section h2{
+  font-family:var(--font-sans);
+  font-size:20px;
+  margin:0 0 10px;
+  letter-spacing:-.01em;
+}
+
+body.project-page.project-3 .cs-section p{
+  margin:0 0 12px;
+  color:rgba(17,19,24,.78);
+  line-height:1.75;
+}
+
+body.project-page.project-3 .cs-subtitle{
+  margin:18px 0 10px;
+  font-size:16px;
+  font-weight:900;
+  letter-spacing:-.01em;
+}
+
+body.project-page.project-3 .cs-sublead{ margin:10px 0 8px; color:rgba(17,19,24,.82); }
+body.project-page.project-3 .cs-ul{ margin:0 0 12px; padding-left:18px; color:rgba(17,19,24,.78); line-height:1.8; }
+body.project-page.project-3 .cs-ol{ margin:0 0 12px; padding-left:18px; color:rgba(17,19,24,.78); line-height:1.9; }
+
+/* =========================
+   NO-CROP IMAGES (scoped)
+   Affects only the case study content area
+========================= */
+body.project-page.project-3 main.cs .cs-main img{
+  width:100%;
+  height:auto !important;
+  object-fit:contain !important;
+  display:block;
+}
+
+/* DO NOT touch header/footer logos */
+body.project-page.project-3 .brand-logo{
+  width:auto !important;
+  height:32px;
+  object-fit:contain !important;
+}
+body.project-page.project-3 .footer-logo{
+  width:auto !important;
+  height:44px;
+  object-fit:contain !important;
+}
+
+/* Figures */
+body.project-page.project-3 .cs-figure{
+  margin:14px 0 18px;
+  border-radius:18px;
+  overflow:hidden;
+  background:rgba(255,255,255,.55);
+}
+body.project-page.project-3 .cs-figure figcaption{
+  font-size:12px;
+  color:rgba(17,19,24,.62);
+  padding:10px 12px 12px;
+  border-top:1px solid rgba(17,19,24,.06);
+}
+
+/* =========================
+   PROBLEM SPACE SPLIT (text + illustration)
+========================= */
+body.project-page.project-3 .cs-split{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:18px;
+  align-items:start;
+}
+body.project-page.project-3 .cs-split-text{ min-width:0; }
+
+body.project-page.project-3 .cs-figure.cs-figure-illus{
+  margin:0;
+  border-radius:18px;
+  overflow:hidden;
+  background:rgba(255,255,255,.65);
+  padding:10px;
+}
+
+/* =========================
+   OBJECTIVES (cards)
+========================= */
+body.project-page.project-3 .cs-objectives{
+  display:grid;
+  gap:10px;
+  margin-top:10px;
+}
+body.project-page.project-3 .cs-obj-card{
+  border-radius:16px;
+  border:1px solid rgba(17,19,24,.10);
+  background:rgba(16, 86, 55, .06);
+  padding:12px 14px;
+}
+body.project-page.project-3 .cs-obj-title{
+  margin:0 0 6px;
+  font-size:14px;
+  font-weight:900;
+  color:rgba(16, 86, 55, .95);
+}
+body.project-page.project-3 .cs-obj-card p{ margin:0; }
+
+/* =========================
+   METHODOLOGY (screenshot layout)
+   text left, 2 stacked illustrations right
+========================= */
+body.project-page.project-3 .cs-method-grid{
+  display:grid;
+  grid-template-columns:1fr 260px;
+  gap:22px;
+  align-items:start;
+}
+
+body.project-page.project-3 .cs-method-text{ min-width:0; }
+
+body.project-page.project-3 .cs-method-intro,
+body.project-page.project-3 .cs-method-outro{
+  color:rgba(17,19,24,.78);
+  margin:0 0 16px;
+}
+
+body.project-page.project-3 .cs-method-phase{
+  margin:18px 0 6px;
+  font-weight:900;
+  color:rgba(17,19,24,.92);
+}
+
+body.project-page.project-3 .cs-method-text p{
+  margin:0 0 12px;
+  color:rgba(17,19,24,.78);
+}
+
+body.project-page.project-3 .cs-method-illus{
+  display:grid;
+  gap:40px;
+  justify-items:end;
+}
+
+body.project-page.project-3 .cs-illus{
+  margin:0;
+  width:100%;
+  max-width:220px;
+  background:transparent;
+  border:none;
+  border-radius:0;
+  overflow:visible;
+}
+
+/* =========================
+   FINDINGS 
+========================= */
+
+body.project-page.project-3 .find-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 0.9fr;
+  gap:24px;
+  align-items:start;
+  margin:18px 0 22px;
+}
+
+body.project-page.project-3 .find-chart{
+  margin:0;
+  padding:0;
+  background:transparent;
+  border:none;
+}
+
+body.project-page.project-3 .find-text h4{
+  margin:0 0 6px;
+  font-size:20px;
+  font-weight:900;
+  letter-spacing:-0.01em;
+  color:rgba(16, 86, 55, .94);
+}
+body.project-page.project-3 .find-text p{
+  margin:0;
+  line-height:1.75;
+}
+
+/* =========================
+   INTERVIEW FINDINGS 
+========================= */
+
+body.project-page.project-3 .cs-interview-2 .iv-top{
+  display:grid;
+  grid-template-columns:1.45fr 0.55fr;
+  gap:28px;
+  align-items:start;
+  margin-top:10px;
+}
+
+body.project-page.project-3 .cs-interview-2 .iv-inline{
+  font-weight:900;
+}
+
+/* BIG illustration (like screenshot) */
+body.project-page.project-3 .cs-interview-2 .iv-illu{
+  margin:0;
+  display:flex;
+  justify-content:flex-end;
+  align-items:flex-start;
+}
+body.project-page.project-3 .cs-interview-2 .iv-illu img{
+  width:min(380px, 100%);
+  height:auto !important;
+  object-fit:contain !important;
+  display:block;
+}
+
+/* 3 theme blocks */
+body.project-page.project-3 .cs-interview-2 .iv-item{
+  margin-top:26px;
+}
+
+body.project-page.project-3 .cs-interview-2 .iv-item h3{
+  margin:0 0 6px;
+  font-weight:900;
+  color:rgba(16, 86, 55, .94);
+}
+body.project-page.project-3 .cs-interview-2 .iv-item p{
+  margin:0;
+  line-height:1.75;
+  color:rgba(17,19,24,.78);
+}
+
+/* =========================
+   PERSONA / SCENARIO (image blocks)
+========================= */
+body.project-page.project-3 .cs2-persona-photo{
+  border-radius:18px;
+  overflow:hidden;
+
+}
+
+/* Smooth scroll */
+html{ scroll-behavior:smooth; }
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width:980px){
+  body.project-page.project-3 .cs-body{ grid-template-columns:1fr; }
+
+  body.project-page.project-3 .cs-side{
+    position:relative;
+    top:auto;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  body.project-page.project-3 .cs2-hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  body.project-page.project-3 .cs-split{
+    grid-template-columns:1fr;
+  }
+
+  body.project-page.project-3 .cs-method-grid{
+    grid-template-columns:1fr;
+  }
+  body.project-page.project-3 .cs-method-illus{
+    justify-items:start;
+  }
+  body.project-page.project-3 .cs-illus{
+    max-width:360px;
+  }
+
+  body.project-page.project-3 .find-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  body.project-page.project-3 .cs-interview-2 .iv-top{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  body.project-page.project-3 .cs-interview-2 .iv-illu{
+    justify-content:flex-start;
+  }
+}
+
+/* =========================
+   JOURNEY MAP MAGNIFIER
+========================= */
+/* ===== Journey Map Rectangle Magnifier ===== */
+.cs-zoom{
+  position: relative;
+  overflow: hidden;
+  cursor: none;              /* hide default cursor inside */
+}
+
+.cs-zoom-img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* The rectangular magnifier "glass" */
+.cs-zoom-lens{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 240px;              /* rectangle size */
+  height: 160px;
+  border-radius: 14px;       /* slightly rounded rectangle */
+  border: 2px solid rgba(17,19,24,.22);
+  box-shadow: 0 14px 38px rgba(17,19,24,.22);
+  background-repeat: no-repeat;
+  background-size: 220%;     /* zoom strength */
+  opacity: 0;
+  transform: translate(-9999px, -9999px);
+  pointer-events: none;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* Show lens on hover */
+.cs-zoom:hover .cs-zoom-lens{
+  opacity: 1;
+}
