@@ -426,8 +426,7 @@ function showWand(){
     }, { once: true });
   }
 
-  // ✅ Mobile: open keyboard
-  focusSpellInput();
+
 }
 
 function hideWand(){
@@ -641,14 +640,17 @@ function randomizeDontPressPosition(){
   dontPressBtn.style.bottom = s.bottom;
 }
 
-if (dontPressBtn) {
-  randomizeDontPressPosition();
+dontPressBtn.addEventListener("click", () => {
+  if (chaosActive) return;
 
-  dontPressBtn.addEventListener("click", () => {
-    if (chaosActive) return;
-    dropEverything();
-  });
-}
+  // ✅ MUST happen immediately on user tap
+  if (spellInput) {
+    spellInput.value = "";
+    spellInput.focus();
+  }
+
+  dropEverything();
+});
 
 window.addEventListener("keydown", handleSpellKey);
 
