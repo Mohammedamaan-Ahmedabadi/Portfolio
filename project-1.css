@@ -500,3 +500,40 @@ html{ scroll-behavior:smooth; }
 .cs-persona span{
   color: #0f3182;
 }
+
+/* ===== Journey Map Rectangle Magnifier ===== */
+.cs-zoom{
+  position: relative;
+  overflow: hidden;
+  cursor: none;              /* hide default cursor inside */
+}
+
+.cs-zoom-img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* The rectangular magnifier "glass" */
+.cs-zoom-lens{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 240px;              /* rectangle size */
+  height: 160px;
+  border-radius: 14px;       /* slightly rounded rectangle */
+  border: 2px solid rgba(17,19,24,.22);
+  box-shadow: 0 14px 38px rgba(17,19,24,.22);
+  background-repeat: no-repeat;
+  background-size: 1000%;     /* zoom strength */
+  opacity: 0;
+  transform: translate(-9999px, -9999px);
+  pointer-events: none;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* Show lens on hover */
+.cs-zoom:hover .cs-zoom-lens{
+  opacity: 1;
+}
