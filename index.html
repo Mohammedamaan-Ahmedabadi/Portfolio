@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mohammedamaan Ahmedabadi</title>
+  <meta name="description" content="Amaan — UX / UI portfolio. Selected projects, about, and resume." />
+
+  <!-- Modern, classy fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Background -->
+  <div class="bg-wrap" id="bgWrap" aria-hidden="true"></div>
+  <div class="blur-layer" aria-hidden="true"></div>
+
+  <!-- Header / Nav -->
+  <header>
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Go to home">
+      <img src="assets/logo.png" alt="Amaan logo" class="brand-logo" />
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a class="is-active" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.pdf" target="_blank" rel="noopener">My Resume</a>
+    </nav>
+
+    <!-- Hamburger (mobile only) -->
+    <button class="nav-toggle" id="navToggle"
+      aria-label="Open menu"
+      aria-controls="mobileMenu"
+      aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Panel -->
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <div class="container mobile-menu-inner">
+      <a class="mobile-link is-active" href="index.html">Home</a>
+      <a class="mobile-link" href="about.html">About</a>
+      <a class="mobile-link" href="resume.pdf" target="_blank" rel="noopener">My Resume</a>
+    </div>
+  </div>
+</header>
+
+
+  <main class="container">
+    <!-- Hero (no box) -->
+ <section class="hero hero-centered">
+  <div class="hero-center">
+    <!-- Your photo -->
+    <div class="hero-card">
+      <img class="avatar" src="assets/amaan.jpg" alt="Portrait of Amaan" />
+    </div>
+
+    <!-- Text content -->
+
+<h1 class="hero-name">
+  <span id="greeting">Hello</span>, I’m Amaan
+</h1>
+
+
+    <p class="subline">
+      I’m a UX/UI designer focused on research-driven interfaces, clean visual systems,
+      and interactions that help people move faster with confidence.
+    </p>
+
+    <div class="cta-row cta-center">
+      <a class="btn primary" href="about.html">Go to About →</a>
+      <a class="btn" href="#projects">Selected Projects <span>↓</span></a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Selected Projects -->
+    <section class="section" id="projects">
+      <div class="section-head">
+        <h2 class="section-title">Selected Projects</h2>
+      </div>
+
+      <div class="grid">
+        <!-- Project 1 -->
+        <article class="project">
+          <img class="project-img" src="assets/project-1.png" alt="Bridging the Gap project preview" />
+          <div class="project-content">
+            <div class="tag-row">
+              <span class="tag">UX Research</span>
+              <span class="tag">2025</span>
+            </div>
+            <h3>Bridging the Gap: Engaging Youth in Ottawa Recreation</h3>
+            <p>Research-led toolkit to improve discovery, participation, and trust for youth programs.</p>
+            <a href="project-1.html">View Project <span>→</span></a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project">
+          <img class="project-img" src="assets/project-2.png" alt="Save Point game store website preview" />
+          <div class="project-content">
+            <div class="tag-row">
+              <span class="tag">UX + UI</span>
+              <span class="tag">2025</span>
+            </div>
+            <h3>Save Point: Game Store Website Experience</h3>
+            <p>Modern storefront concept with improved navigation, accessibility, and conversion flow.</p>
+            <a href="project-2.html">View Project <span>→</span></a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project">
+          <img class="project-img" src="assets/project-3.avif" alt="A Centralized Calendar for Algonquin College Students" />
+          <div class="project-content">
+            <div class="tag-row">
+              <span class="tag">UX Research</span>
+              <span class="tag">Design System</span>
+            </div>
+            <h3>A Centralized Calendar for Algonquin College Students</h3>
+            <p>UX research on first-semester students’ scheduling challenges at Algonquin College.</p>
+            <a href="project-3.html">View Project <span>→</span></a>
+          </div>
+        </article>
+<!-- 
+        Project 4 
+        <article class="project">
+          <img class="project-img" src="assets/projects/project-4.jpg" alt="Personal portfolio theme preview" />
+          <div class="project-content">
+            <div class="tag-row">
+              <span class="tag">Web Dev</span>
+              <span class="tag">WordPress</span>
+            </div>
+            <h3>Personal Portfolio Theme</h3>
+            <p>A custom modern theme with reusable sections, responsive layout, and fast performance.</p>
+            <a href="project-4.html">View Project <span>→</span></a>
+          </div>
+        </article> -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Do Not Press button (gamification) -->
+<button class="dont-press" id="dontPressBtn" type="button" aria-label="Do not press button">
+  <span class="button-base"></span>
+  <span class="button-top">DO NOT PRESS</span>
+</button>
+
+
+<!-- Wand overlay -->
+<div class="wand-layer" id="wandLayer" hidden aria-hidden="true">
+  <div class="wand" id="wand">
+    <span class="wand-emoji">🪄</span>
+    <span class="wand-glow" id="wandGlow"></span>
+  </div>
+
+  <div class="spell-hint" id="spellHint">
+    Told you not to press the button!<br> Now only magic can fix this website. <br><span class="spell">Hint: Cast a spell — Reparo ✨</span>
+    <span class="progress" id="spellProgress"></span>
+  </div>
+</div>
+
+<!-- Flash overlay -->
+<div class="flashbang" id="flashbang" hidden aria-hidden="true"></div>
+
+
+  <!-- Footer (full width like header, no box) -->
+<footer>
+  <div class="container footer-inner footer-centered">
+    
+    <img 
+  src="assets/logo.png" 
+  alt="Amaan logo" 
+  class="footer-logo"
+/>
+
+
+    <h3 class="footer-title">
+      Let’s connect — I reply faster than your Wi-Fi 😄
+    </h3>
+
+    <!-- Email (first line) -->
+    <div class="footer-email">
+      <a href="mailto:amaanahmedabadi007@gmail.com">amaanahmedabadi007@gmail.com</a>
+    </div>
+
+    <!-- Social links (second line) -->
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a>
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+    </div>
+
+    <p class="copyright">
+      © <span id="year"></span> Amaan Ahmedabadi. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
