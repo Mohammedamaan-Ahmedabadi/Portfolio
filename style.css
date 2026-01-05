@@ -1140,3 +1140,7 @@ body.chaos .drop{
   78%  { transform:perspective(1200px) translate3d(0, calc(22vh - 5px), 0) rotateX(74deg) rotateZ(-6deg) scale(0.55); }
   100% {}
 }
+
+/* Smooth scroll */
+html{ scroll-behavior:smooth; }
+
