@@ -640,19 +640,6 @@ function randomizeDontPressPosition(){
   dontPressBtn.style.bottom = s.bottom;
 }
 
-dontPressBtn.addEventListener("click", () => {
-  if (chaosActive) return;
-
-  // ✅ MUST happen immediately on user tap
-  if (spellInput) {
-    spellInput.value = "";
-    spellInput.focus();
-  }
-
-  dropEverything();
-});
-
-window.addEventListener("keydown", handleSpellKey);
 
 
 // ===== Journey Map Rectangle Magnifier =====
