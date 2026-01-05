@@ -41,208 +41,104 @@ const CURSOR_FORCE = 180;
 const CURSOR_RADIUS = 260;
 const DAMPING = 0.98;
 
-/* ✅ Keep shapes defined so other features (droplets, etc.) never crash */
 const shapes = [];
 
-/* ✅ Only run shapes logic if bgWrap exists on the page */
-if (bgWrap) {
-  function createShape(){
-    const el = document.createElement("div");
-    el.className = "shape";
+function createShape(){
+  const el = document.createElement("div");
+  el.className = "shape";
 
-    const sparkle = Math.random() < 0.28;
-    if (sparkle) el.classList.add("is-sparkle");
+  const sparkle = Math.random() < 0.28;
+  if (sparkle) el.classList.add("is-sparkle");
 
-    const size = sparkle ? rand(14, 28) : rand(60, 160);
+  const size = sparkle ? rand(14, 28) : rand(60, 160);
 
-    el.style.width = `${size}px`;
-    el.style.height = `${size}px`;
-    el.style.background = `radial-gradient(circle at 30% 30%, ${pick(COLORS)}, rgba(255,255,255,.15))`;
+  el.style.width = `${size}px`;
+  el.style.height = `${size}px`;
+  el.style.background = `radial-gradient(circle at 30% 30%, ${pick(COLORS)}, rgba(255,255,255,.15))`;
 
-    if (!sparkle) {
-      el.style.filter = "blur(1px) saturate(1.1)";
-    } else {
-      el.style.opacity = "0.75";
-    }
-
-    const x = rand(0, Math.max(1, vw - size));
-    const y = rand(0, Math.max(1, vh - size));
-
-    const base = sparkle ? rand(50, 110) : rand(25, 70);
-    const angle = rand(0, Math.PI * 2);
-    let vx = Math.cos(angle) * base;
-    let vy = Math.sin(angle) * base;
-
-    const rot = rand(-20, 20);
-    const vr = rand(-14, 14);
-
-    bgWrap.appendChild(el);
-    el.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${rot}deg)`;
-
-    return { el, size, x, y, vx, vy, rot, vr };
+  if (!sparkle) {
+    el.style.filter = "blur(1px) saturate(1.1)";
+  } else {
+    el.style.opacity = "0.75";
   }
 
+  const x = rand(0, Math.max(1, vw - size));
+  const y = rand(0, Math.max(1, vh - size));
+
+  const base = sparkle ? rand(50, 110) : rand(25, 70);
+  const angle = rand(0, Math.PI * 2);
+  let vx = Math.cos(angle) * base;
+  let vy = Math.sin(angle) * base;
+
+  const rot = rand(-20, 20);
+  const vr = rand(-14, 14);
+
+  // ✅ Guard: if bgWrap doesn't exist on project pages, skip append
+  if (bgWrap) {
+    bgWrap.appendChild(el);
+    el.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${rot}deg)`;
+  }
+
+  return { el, size, x, y, vx, vy, rot, vr };
+}
+
+// ✅ Only build shapes if bgWrap exists
+if (bgWrap) {
   for (let i = 0; i < SHAPE_COUNT; i++) shapes.push(createShape());
+}
 
-  const MODE = "bounce";
+const MODE = "bounce";
 
-  /* ---------- Animation loop ---------- */
-  let last = performance.now();
+/* ---------- Animation loop ---------- */
+let last = performance.now();
 
-  function tick(now){
-    const dt = Math.min(0.033, (now - last) / 1000);
-    last = now;
+function tick(now){
+  const dt = Math.min(0.033, (now - last) / 1000);
+  last = now;
 
-    if (!reduceMotion) {
-      for (const s of shapes) {
-        const cx = mouseX - (s.x + s.size / 2);
-        const cy = mouseY - (s.y + s.size / 2);
-        const dist = Math.hypot(cx, cy) || 1;
+  // ✅ Only animate if shapes exist and no reduced motion
+  if (!reduceMotion && shapes.length) {
+    for (const s of shapes) {
+      const cx = mouseX - (s.x + s.size / 2);
+      const cy = mouseY - (s.y + s.size / 2);
+      const dist = Math.hypot(cx, cy) || 1;
 
-        if (dist < CURSOR_RADIUS) {
-          const strength = (1 - dist / CURSOR_RADIUS) * CURSOR_FORCE;
-          s.vx += (cx / dist) * strength * dt;
-          s.vy += (cy / dist) * strength * dt;
-        }
+      if (dist < CURSOR_RADIUS) {
+        const strength = (1 - dist / CURSOR_RADIUS) * CURSOR_FORCE;
+        s.vx += (cx / dist) * strength * dt;
+        s.vy += (cy / dist) * strength * dt;
+      }
 
-        s.x += s.vx * dt;
-        s.y += s.vy * dt;
+      s.x += s.vx * dt;
+      s.y += s.vy * dt;
 
-        s.vx *= DAMPING;
-        s.vy *= DAMPING;
+      s.vx *= DAMPING;
+      s.vy *= DAMPING;
 
-        s.rot += s.vr * dt;
+      s.rot += s.vr * dt;
 
-        if (MODE === "bounce") {
-          if (s.x <= 0) { s.x = 0; s.vx *= -1; }
-          if (s.y <= 0) { s.y = 0; s.vy *= -1; }
-          if (s.x >= vw - s.size) { s.x = vw - s.size; s.vx *= -1; }
-          if (s.y >= vh - s.size) { s.y = vh - s.size; s.vy *= -1; }
-        } else {
-          if (s.x < -s.size) s.x = vw;
-          if (s.x > vw) s.x = -s.size;
-          if (s.y < -s.size) s.y = vh;
-          if (s.y > vh) s.y = -s.size;
-        }
+      if (MODE === "bounce") {
+        if (s.x <= 0) { s.x = 0; s.vx *= -1; }
+        if (s.y <= 0) { s.y = 0; s.vy *= -1; }
+        if (s.x >= vw - s.size) { s.x = vw - s.size; s.vx *= -1; }
+        if (s.y >= vh - s.size) { s.y = vh - s.size; s.vy *= -1; }
+      } else {
+        if (s.x < -s.size) s.x = vw;
+        if (s.x > vw) s.x = -s.size;
+        if (s.y < -s.size) s.y = vh;
+        if (s.y > vh) s.y = -s.size;
+      }
 
+      if (s.el) {
         s.el.style.transform = `translate3d(${s.x}px, ${s.y}px, 0) rotate(${s.rot}deg)`;
       }
     }
-
-    requestAnimationFrame(tick);
   }
 
   requestAnimationFrame(tick);
-
-  /* =========================
-     BLAST ON BREAKPOINT CHANGE
-  ========================= */
-  const BREAKPOINT_PX = 600;
-  const mq = window.matchMedia(`(max-width: ${BREAKPOINT_PX}px)`);
-
-  let lastIsMobile = mq.matches;
-
-  const BURST_COUNT = 40;
-  const BURST_LIFE_MS = 650;
-  const BURST_FORCE = 520;
-  const KICK_FORCE = 260;
-
-  function triggerBlast(){
-    if (!bgWrap || reduceMotion) return;
-
-    const ox = vw / 2;
-    const oy = vh / 2;
-
-    for (const s of shapes) {
-      const dx = (s.x + s.size / 2) - ox;
-      const dy = (s.y + s.size / 2) - oy;
-      const d = Math.hypot(dx, dy) || 1;
-
-      s.vx += (dx / d) * KICK_FORCE;
-      s.vy += (dy / d) * KICK_FORCE;
-    }
-
-    const created = [];
-    for (let i = 0; i < BURST_COUNT; i++) {
-      const p = document.createElement("div");
-      p.className = "burst-particle";
-      if (Math.random() < 0.35) p.classList.add("spark");
-
-      const size = rand(8, 18);
-      p.style.setProperty("--ps", `${size}px`);
-      p.style.setProperty(
-        "--pc",
-        `radial-gradient(circle at 30% 30%, ${pick(COLORS)}, rgba(255,255,255,.2))`
-      );
-
-      let x = ox;
-      let y = oy;
-
-      const a = rand(0, Math.PI * 2);
-      const sp = rand(BURST_FORCE * 0.45, BURST_FORCE);
-      let vx = Math.cos(a) * sp;
-      let vy = Math.sin(a) * sp;
-
-      const rot = rand(-30, 30);
-
-      bgWrap.appendChild(p);
-      created.push({ el: p, x, y, vx, vy, rot });
-    }
-
-    const start = performance.now();
-
-    function animateBurst(now){
-      const t = now - start;
-      const k = Math.min(1, t / BURST_LIFE_MS);
-      const ease = 1 - Math.pow(1 - k, 3);
-
-      for (const b of created) {
-        b.x += b.vx * 0.016 * (1 - ease * 0.65);
-        b.y += b.vy * 0.016 * (1 - ease * 0.65);
-
-        b.el.style.opacity = String(Math.max(0, 1 - k));
-        b.el.style.transform =
-          `translate3d(${b.x}px, ${b.y}px, 0) rotate(${b.rot + ease * 120}deg) scale(${1 + ease * 0.25})`;
-      }
-
-      if (t < BURST_LIFE_MS) requestAnimationFrame(animateBurst);
-      else created.forEach(b => b.el.remove());
-    }
-
-    requestAnimationFrame(animateBurst);
-  }
-
-  function spreadShapesEverywhere(){
-    if (reduceMotion) return;
-
-    const ox = vw / 2;
-    const oy = vh / 2;
-
-    for (const s of shapes) {
-      s.x = rand(0, Math.max(1, vw - s.size));
-      s.y = rand(0, Math.max(1, vh - s.size));
-
-      const dx = (s.x + s.size / 2) - ox;
-      const dy = (s.y + s.size / 2) - oy;
-      const d = Math.hypot(dx, dy) || 1;
-
-      const burst = rand(180, 420);
-      s.vx = (dx / d) * burst;
-      s.vy = (dy / d) * burst;
-
-      s.el.style.transform = `translate3d(${s.x}px, ${s.y}px, 0) rotate(${s.rot}deg)`;
-    }
-  }
-
-  mq.addEventListener("change", (e) => {
-    const isMobile = e.matches;
-    if (isMobile !== lastIsMobile) {
-      triggerBlast();
-      if (!isMobile && lastIsMobile) spreadShapesEverywhere();
-      lastIsMobile = isMobile;
-    }
-  });
 }
+
+requestAnimationFrame(tick);
 
 /* =========================
    GREETING ROTATION (SPIN)
@@ -311,6 +207,117 @@ if (greetingEl) {
 }
 
 /* =========================
+   BLAST ON BREAKPOINT CHANGE
+========================= */
+const BREAKPOINT_PX = 600;
+const mq = window.matchMedia(`(max-width: ${BREAKPOINT_PX}px)`);
+
+let lastIsMobile = mq.matches;
+
+const BURST_COUNT = 40;
+const BURST_LIFE_MS = 650;
+const BURST_FORCE = 520;
+const KICK_FORCE = 260;
+
+function triggerBlast(){
+  if (!bgWrap || reduceMotion || !shapes.length) return;
+
+  const ox = vw / 2;
+  const oy = vh / 2;
+
+  for (const s of shapes) {
+    const dx = (s.x + s.size / 2) - ox;
+    const dy = (s.y + s.size / 2) - oy;
+    const d = Math.hypot(dx, dy) || 1;
+
+    s.vx += (dx / d) * KICK_FORCE;
+    s.vy += (dy / d) * KICK_FORCE;
+  }
+
+  const created = [];
+  for (let i = 0; i < BURST_COUNT; i++) {
+    const p = document.createElement("div");
+    p.className = "burst-particle";
+    if (Math.random() < 0.35) p.classList.add("spark");
+
+    const size = rand(8, 18);
+    p.style.setProperty("--ps", `${size}px`);
+    p.style.setProperty(
+      "--pc",
+      `radial-gradient(circle at 30% 30%, ${pick(COLORS)}, rgba(255,255,255,.2))`
+    );
+
+    let x = ox;
+    let y = oy;
+
+    const a = rand(0, Math.PI * 2);
+    const sp = rand(BURST_FORCE * 0.45, BURST_FORCE);
+    let vx = Math.cos(a) * sp;
+    let vy = Math.sin(a) * sp;
+
+    const rot = rand(-30, 30);
+
+    bgWrap.appendChild(p);
+    created.push({ el: p, x, y, vx, vy, rot });
+  }
+
+  const start = performance.now();
+
+  function animateBurst(now){
+    const t = now - start;
+    const k = Math.min(1, t / BURST_LIFE_MS);
+    const ease = 1 - Math.pow(1 - k, 3);
+
+    for (const b of created) {
+      b.x += b.vx * 0.016 * (1 - ease * 0.65);
+      b.y += b.vy * 0.016 * (1 - ease * 0.65);
+
+      b.el.style.opacity = String(Math.max(0, 1 - k));
+      b.el.style.transform =
+        `translate3d(${b.x}px, ${b.y}px, 0) rotate(${b.rot + ease * 120}deg) scale(${1 + ease * 0.25})`;
+    }
+
+    if (t < BURST_LIFE_MS) requestAnimationFrame(animateBurst);
+    else created.forEach(b => b.el.remove());
+  }
+
+  requestAnimationFrame(animateBurst);
+}
+
+function spreadShapesEverywhere(){
+  if (reduceMotion || !shapes.length) return;
+
+  const ox = vw / 2;
+  const oy = vh / 2;
+
+  for (const s of shapes) {
+    s.x = rand(0, Math.max(1, vw - s.size));
+    s.y = rand(0, Math.max(1, vh - s.size));
+
+    const dx = (s.x + s.size / 2) - ox;
+    const dy = (s.y + s.size / 2) - oy;
+    const d = Math.hypot(dx, dy) || 1;
+
+    const burst = rand(180, 420);
+    s.vx = (dx / d) * burst;
+    s.vy = (dy / d) * burst;
+
+    if (s.el) {
+      s.el.style.transform = `translate3d(${s.x}px, ${s.y}px, 0) rotate(${s.rot}deg)`;
+    }
+  }
+}
+
+mq.addEventListener("change", (e) => {
+  const isMobile = e.matches;
+  if (isMobile !== lastIsMobile) {
+    triggerBlast();
+    if (!isMobile && lastIsMobile) spreadShapesEverywhere();
+    lastIsMobile = isMobile;
+  }
+});
+
+/* =========================
    FOOTER YEAR
 ========================= */
 const yearEl = document.getElementById("year");
@@ -363,6 +370,9 @@ const wandGlow = document.getElementById("wandGlow");
 const flashbang = document.getElementById("flashbang");
 const spellProgress = document.getElementById("spellProgress");
 
+/* ✅ NEW: hidden input for mobile keyboard */
+const spellInput = document.getElementById("spellInput");
+
 const SPELL = "reparo";
 let spellIndex = 0;
 let chaosActive = false;
@@ -378,6 +388,18 @@ function setGlowIntensity(i){
   wandGlow.style.setProperty("--glowA", glowA.toFixed(2));
   wandGlow.style.setProperty("--glowB", `${glowB.toFixed(0)}px`);
   wandGlow.style.setProperty("--glowC", `${glowC.toFixed(0)}px`);
+}
+
+/* ✅ NEW helpers */
+function focusSpellInput(){
+  if (!spellInput) return;
+  spellInput.value = "";
+  spellInput.focus({ preventScroll: true });
+}
+
+function blurSpellInput(){
+  if (!spellInput) return;
+  spellInput.blur();
 }
 
 function showWand(){
@@ -403,6 +425,9 @@ function showWand(){
       wand.classList.add("is-idle");
     }, { once: true });
   }
+
+  // ✅ Mobile: open keyboard
+  focusSpellInput();
 }
 
 function hideWand(){
@@ -415,6 +440,9 @@ function hideWand(){
 
   wandLayer.hidden = true;
   wandLayer.setAttribute("aria-hidden", "true");
+
+  // ✅ Mobile: close keyboard
+  blurSpellInput();
 }
 
 function flashAndRestore(){
@@ -443,13 +471,13 @@ function getDropletTargets(){
   const targets = [
     document.querySelector("header"),
 
-    // hero (home page only)
+    // hero
     document.querySelector(".hero-card"),
     document.querySelector(".hero-name"),
     document.querySelector(".subline"),
     document.querySelector(".cta-row"),
 
-    // projects (home page only)
+    // projects
     ...document.querySelectorAll(".project"),
 
     // footer + button
@@ -471,12 +499,14 @@ function applyDropletStagger(){
     el.style.setProperty("--d", `${START_MS + i * STEP_MS}ms`);
   });
 
-  // background shapes fall too (only if they exist)
-  shapes.forEach((s, i) => {
-    if (!s.el) return;
-    s.el.classList.add("drop");
-    s.el.style.setProperty("--d", `${START_MS + i * 18}ms`);
-  });
+  // background shapes fall too
+  if (shapes.length) {
+    shapes.forEach((s, i) => {
+      if (!s.el) return;
+      s.el.classList.add("drop");
+      s.el.style.setProperty("--d", `${START_MS + i * 18}ms`);
+    });
+  }
 }
 
 function clearDropletStagger(){
@@ -485,11 +515,13 @@ function clearDropletStagger(){
     el.style.removeProperty("--d");
   });
 
-  shapes.forEach((s) => {
-    if (!s.el) return;
-    s.el.classList.remove("drop");
-    s.el.style.removeProperty("--d");
-  });
+  if (shapes.length) {
+    shapes.forEach((s) => {
+      if (!s.el) return;
+      s.el.classList.remove("drop");
+      s.el.style.removeProperty("--d");
+    });
+  }
 }
 
 function dropEverything(){
@@ -515,6 +547,9 @@ function restoreEverything(){
   setGlowIntensity(0);
   spellIndex = 0;
   lockInput = false;
+
+  // ✅ make sure keyboard is closed
+  blurSpellInput();
 }
 
 function updateSpellProgress(){
@@ -524,6 +559,7 @@ function updateSpellProgress(){
   spellProgress.textContent = `${done}${left}`;
 }
 
+/* Desktop hardware keyboard support */
 function handleSpellKey(e){
   if (!chaosActive || lockInput) return;
   if (e.ctrlKey || e.metaKey || e.altKey) return;
@@ -547,6 +583,45 @@ function handleSpellKey(e){
     updateSpellProgress();
     setGlowIntensity(0);
   }
+}
+
+/* ✅ Mobile keyboard input support */
+if (spellInput) {
+  spellInput.addEventListener("input", () => {
+    if (!chaosActive || lockInput) return;
+
+    const v = (spellInput.value || "").toLowerCase();
+    const k = v.slice(-1);
+    if (!k) return;
+
+    const expected = SPELL[spellIndex];
+
+    if (k === expected) {
+      spellIndex += 1;
+      updateSpellProgress();
+      setGlowIntensity(spellIndex);
+
+      if (spellIndex >= SPELL.length) {
+        lockInput = true;
+        blurSpellInput();
+        setTimeout(() => flashAndRestore(), 120);
+      }
+    } else {
+      spellIndex = 0;
+      updateSpellProgress();
+      setGlowIntensity(0);
+    }
+
+    // keep it tiny so suggestions/autofill don't mess it up
+    spellInput.value = "";
+  });
+}
+
+/* ✅ Tap wand layer to re-open keyboard if focus is lost */
+if (wandLayer) {
+  wandLayer.addEventListener("click", () => {
+    if (chaosActive && !lockInput) focusSpellInput();
+  });
 }
 
 function randomizeDontPressPosition(){
@@ -578,6 +653,46 @@ if (dontPressBtn) {
 window.addEventListener("keydown", handleSpellKey);
 
 
+// ===== Journey Map Rectangle Magnifier =====
+document.querySelectorAll(".cs-zoom").forEach((wrap) => {
+  const img = wrap.querySelector(".cs-zoom-img");
+  const lens = wrap.querySelector(".cs-zoom-lens");
+  if (!img || !lens) return;
 
+  const zoom = 10.0; // must match background-size ~220%
 
+  // set background image for lens once image is ready
+  const setBg = () => {
+    lens.style.backgroundImage = `url("${img.src}")`;
+    lens.style.backgroundSize = `${zoom * 100}%`;
+  };
+  if (img.complete) setBg();
+  img.addEventListener("load", setBg);
 
+  function move(e){
+    const rect = wrap.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const lw = lens.offsetWidth;
+    const lh = lens.offsetHeight;
+
+    // keep lens inside container
+    const lx = Math.max(0, Math.min(x - lw/2, rect.width - lw));
+    const ly = Math.max(0, Math.min(y - lh/2, rect.height - lh));
+
+    lens.style.transform = `translate(${lx}px, ${ly}px)`;
+
+    // background position aligns with cursor
+    const bx = (x / rect.width) * 100;
+    const by = (y / rect.height) * 100;
+    lens.style.backgroundPosition = `${bx}% ${by}%`;
+  }
+
+  wrap.addEventListener("mousemove", move);
+  wrap.addEventListener("mouseenter", () => lens.style.opacity = "1");
+  wrap.addEventListener("mouseleave", () => {
+    lens.style.opacity = "0";
+    lens.style.transform = "translate(-9999px, -9999px)";
+  });
+});
