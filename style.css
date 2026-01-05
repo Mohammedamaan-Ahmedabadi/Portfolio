@@ -204,6 +204,29 @@ h1{
   transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
 
+.btn,
+.btn:visited,
+.btn:hover,
+.btn:active,
+.btn:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* If you have a primary hero button */
+.btn.primary,
+.btn.primary:visited,
+.btn.primary:hover,
+.btn.primary:active,
+.btn.primary:focus {
+  color: #ffffff; /* lock text color */
+}
+
+/* iOS tap highlight fix */
+.btn {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .btn:hover{
   transform:translateY(-2px);
   box-shadow:0 14px 34px rgba(17,19,24,.12);
