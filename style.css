@@ -235,8 +235,7 @@ h1{
 
 .btn.primary{
   border:none;
-  background:linear-gradient(135deg, rgba(0,0,0,.9));
-  color:#ffffff;
+  background:rgba(0,0,0,.9);
 }
 
 /* Hero photo card */
