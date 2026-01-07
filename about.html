@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Amaan</title>
+  <meta name="description" content="About Amaan — UX/UI designer focused on research-driven interfaces and clean visual systems." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Background -->
+  <div class="bg-wrap" id="bgWrap" aria-hidden="true"></div>
+  <div class="blur-layer" aria-hidden="true"></div>
+
+  <!-- Header / Nav -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Go to home">
+        <img src="assets/logo.png" alt="Amaan logo" class="brand-logo" />
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a class="is-active" href="about.html">About</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">My Resume</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle"
+        aria-label="Open menu"
+        aria-controls="mobileMenu"
+        aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <div class="container mobile-menu-inner">
+        <a class="mobile-link" href="index.html">Home</a>
+        <a class="mobile-link is-active" href="about.html">About</a>
+        <a class="mobile-link" href="resume.pdf" target="_blank" rel="noopener">My Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+
+
+    <!-- About content -->
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">My Story</h2>
+      </div>
+
+      <article class="project" style="grid-column: span 12; min-height:auto; grid-template-rows:auto 1fr;">
+        <div class="project-content">
+          <p>
+            I enjoy turning complex problems into simple, usable experiences. My process usually starts with
+            research (interviews, observation, and testing), then moves into structure (flows + IA), and finally
+            visual design and interaction polish.
+          </p>
+          <p>
+            I care about accessibility, clarity, and making interfaces feel “obvious” to use — without needing
+            instructions.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Skills</h2>
+      </div>
+
+      <div class="grid">
+        <article class="project" style="min-height:auto; grid-template-rows:auto 1fr;">
+          <div class="project-content">
+            <h3>UX</h3>
+            <p>Research • Personas • Journeys • IA • Usability Testing</p>
+          </div>
+        </article>
+
+        <article class="project" style="min-height:auto; grid-template-rows:auto 1fr;">
+          <div class="project-content">
+            <h3>UI</h3>
+            <p>Typography • Layout • Components • Design Systems</p>
+          </div>
+        </article>
+
+        <article class="project" style="grid-column: span 12; min-height:auto; grid-template-rows:auto 1fr;">
+          <div class="project-content">
+            <h3>Tools</h3>
+            <p>Figma • Adobe Suite • HTML/CSS/JS • WordPress</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner footer-centered">
+      <img src="assets/logo.png" alt="Amaan logo" class="footer-logo" />
+
+      <h3 class="footer-title">
+        Let’s connect — I reply faster than your Wi-Fi 😄
+      </h3>
+
+      <div class="footer-email">
+        <a href="mailto:amaanahmedabadi007@gmail.com">amaanahmedabadi007@gmail.com</a>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <p class="copyright">
+        © <span id="year"></span> Amaan Ahmedabadi. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

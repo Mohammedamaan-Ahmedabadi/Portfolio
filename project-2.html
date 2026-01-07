@@ -1,0 +1,354 @@
+<!-- project-2.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Save Point — UI Case Study</title>
+  <meta name="description" content="Case study: Bridging the Gap — Engaging Youth in Ottawa Recreation." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="project-2.css">
+</head>
+
+<body class="project-page project-2">
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Go to home">
+        <img src="assets/logo.png" alt="Amaan logo" class="brand-logo" />
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">My Resume</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <div class="container mobile-menu-inner">
+        <a class="mobile-link" href="index.html">Home</a>
+        <a class="mobile-link" href="about.html">About</a>
+        <a class="mobile-link" href="resume.pdf" target="_blank" rel="noopener">My Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container cs">
+
+    <!-- Back pill -->
+    <div class="cs-topbar">
+      <a class="cs-backpill" href="index.html">← Back to Home</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="cs-hero">
+      <div class="cs-hero-card">
+        <div class="cs-hero-top">
+          <span class="cs-pill">UI Design</span>
+        </div>
+
+        <div class="cs-hero-grid">
+          <aside class="cs-hero-meta">
+            <div class="cs-meta-item">
+              <div class="cs-meta-label">Role</div>
+              <div class="cs-meta-value">UI / UX Designer</div>
+            </div>
+
+            <div class="cs-meta-item">
+              <div class="cs-meta-label">Team</div>
+              <div class="cs-meta-value">Amaan, Bee, Muhammad</div>
+            </div>
+
+            <div class="cs-meta-item">
+              <div class="cs-meta-label">Focus</div>
+              <div class="cs-meta-value">UI Design System</div>
+            </div>
+          </aside>
+
+          <div class="cs-hero-main">
+            <h1 class="cs-title">The Save Point</h1>
+            <p class="cs-lede">
+              The Save Point is a locally owned gaming store and community hub. This project focused on designing a cohesive, modern website that translates the store’s welcoming in-store experience into a scalable digital
+              product. The UI emphasizes clarity, community, and accessibility while supporting the store’s growing
+              online presence.
+             </p>
+          </div>
+        </div>
+            <!-- <figure class="cs-figure">
+            <img src="assets/project-2.png" alt="project2 hero image" />
+          </figure> -->
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <section class="cs-body">
+
+      <!-- MINI NAV -->
+      <nav class="cs-side">
+        <a href="#overview">Client Overview</a>
+        <a href="#context">Context</a>
+        <a href="#objective">Objective</a>
+        <a href="#approach">Design Approach</a>
+        <a href="#demographics">Demographics</a>
+        <a href="#screens">Website Design</a>
+        <a href="#accessibility">Accessibility</a>
+        <a href="#outcome">Outcome</a>
+        <a href="#prototype">Interactive Prototype</a>
+        <a href="#learning">Learning</a>
+      </nav>
+
+      <!-- MAIN CONTENT -->
+      <article class="cs-main">
+
+        <section class="cs-section" id="overview">
+          <h2>Client Overview</h2>
+          <p>
+            The Save Point is a locally owned video game store and community hub that brings gamers of all ages and
+            experience levels together. Known for its inclusive atmosphere, curated game selection, and regular in-store
+            events, the shop has become a trusted part of its local gaming community for over a decade.
+
+            As the store continues to grow, The Save Point is looking to expand its presence online with a cohesive,
+            user-friendly website and visual identity. The goal is to translate the welcoming, community-driven in-store
+            experience into a clear and engaging digital platform that promotes events, highlights inventory, and
+            supports long-term growth.
+
+        </section>
+
+        <section class="cs-section" id="context">
+          <h2>Context</h2>
+          <p>
+            While The Save Point had a strong in-person identity, its digital presence
+            did not fully reflect its community-driven values.
+            The website needed to serve multiple audiences—from dedicated gamers to parents
+            shopping for gifts—without overwhelming users.
+          </p>
+        </section>
+
+        <section class="cs-section" id="objective">
+          <h2>Objective</h2>
+          <ul class="cs-ul">
+            <li>Create a clear and welcoming UI system</li>
+            <li>Support both gamers and non-gamers</li>
+            <li>Promote events and community engagement</li>
+            <li>Maintain consistency across multiple pages</li>
+          </ul>
+        </section>
+
+        <section class="cs-section" id="approach">
+          <h2>Design Approach</h2>
+          <p>
+            Designing The Save Point’s website began with understanding the emotional and psychological needs of its two
+            core audiences: younger gamers seeking excitement and connection, and adults looking for clarity,
+            confidence, and guidance. The interface uses warm colours, friendly microcopy, and subtle gaming-inspired
+            elements to create a welcoming, energetic, and trustworthy experience while reducing intimidation for
+            first-time visitors, especially parents.
+
+            <br><br>Community and trust are reinforced through social validation. Visual highlights from tournaments,
+            community photos, and testimonials help younger users feel a sense of belonging, while reassuring parents
+            that the store is established, inclusive, and safe.
+
+            <br><br>Reciprocity is built into the experience by offering value through early access to event
+            announcements, simple guides for parents, and small exclusive perks. These gestures help users feel
+            appreciated and encourage return visits.
+
+            <br><br>To reduce cognitive load, the layout is structured around clear pathways such as Shop, Events, and
+            Games. Simplified choices prevent decision fatigue and ensure that both gamers and non-gamers can quickly
+            find what they need, whether it’s age-appropriate gift suggestions or upcoming tournaments.
+
+            <br><br>Scarcity and gamification are introduced subtly. Limited retro inventory and real-time event
+            availability encourage timely engagement, while light gamified elements reward participation and support
+            long-term community involvement.
+
+            <br><br>Together, these design considerations create an experience that feels intuitive, reassuring, and
+            enjoyable, supporting both user needs and The Save Point’s goal of strengthening community engagement and
+            growing its digital presence.
+          </p>
+        </section>
+
+        <section class="cs-section" id="demographics">
+          <h2>Demographics</h2>
+          <h3>Primary Audience: Local Gamers</h3>
+          <p>The Save Point’s primary audience consists of local gamers, primarily teens and adults aged 13-24, who
+            visit the store regularly and play video games as a hobby. Most customers are English-speaking, with a small
+            number of multilingual community members, and the audience is gender-inclusive, reflecting the store’s
+            commitment to creating a welcoming environment for players of all backgrounds. Typically living nearby,
+            these customers tend to include students or working professionals, meaning their technological skill levels
+            generally range from moderate to high. Common barriers may include budget limitations, especially for
+            younger gamers or adults supporting families, as well as accessibility needs that must be considered for the
+            store to thrive as an inclusive pillar of its community.</p>
+          <h3>Primary persona</h3>
+
+          <figure class="cs-figure">
+            <img src="assets/Jordan.png" alt="Persona 1 placeholder" />
+          </figure>
+
+          <h3>Secondary Audience: Parents/Relatives looking for gifts</h3>
+          <p>The Save Point’s secondary audience includes parents/relatives who shop for the gamers in their lives.
+            Primarily adults aged 25-50, as well as Grandparents, are also often local residents, but can also include
+            visiting relatives from nearby cities who happen to be visiting. Primarily English speaking, there are
+            multilingual visitors whose needs must be represented. Many are working professionals with varied
+            technological familiarity, though they often lean more towards being inexperienced. Because they may come in
+            seeking recommendations or assistance, this audience typically has limited gaming knowledge and can feel
+            intimidated entering a specialized space for the first time. Additional barriers include time constraints, a
+            need for straightforward information, and accessibility considerations that must be addressed to ensure they
+            feel supported and welcome.
+            We can identify the primary and secondary audiences of The Save Point by directly observing who visits the
+            store and engaging customers in casual, friendly conversations about their needs, habits, and reasons for
+            coming in. These are time-intensive methods, but also effective for ensuring we’re focusing on the right
+            demographics.</p>
+
+          <h3>Secondary persona</h3>
+
+          <figure class="cs-figure">
+            <img src="assets/Melissa.png" alt="Persona 2 placeholder" />
+          </figure>
+        </section>
+
+        <section class="cs-section" id="screens">
+          <h2>Website Design</h2>
+
+          <p>The final UI design presents The Save Point as a trusted, community-focused brand through a cohesive visual
+            language, clear information hierarchy, and responsive layouts. The website supports intuitive browsing, easy
+            discovery of games and events, and meaningful engagement across desktop and mobile devices</p>
+
+          <h3>Style Guide</h3>
+          <figure class="cs-figure">
+            <img src="assets/Style Guide.png" alt="Style Guide" />
+          </figure>
+
+          <h3>Home page</h3>
+          <figure class="cs-figure">
+            <img src="assets/Home.png" alt="Home page" />
+          </figure>
+          
+          <h3>Components</h3>
+          <p>Modern, interactive hover states add visual feedback and depth, making components feel responsive and
+            engaging without overwhelming the interface.</p>
+          <figure class="cs-figure cs-video">
+            <video src="assets/component.mp4" autoplay muted loop playsinline preload="auto"
+              poster="assets/video-poster.jpg"></video>
+          </figure>
+
+          <h3>Merchandise page</h3>
+          <figure class="cs-figure">
+            <img src="assets/Merchandise.png" alt="Merchandise page" />
+          </figure>
+          
+          <h3>Login page</h3>
+          <figure class="cs-figure">
+            <img src="assets/Login.png" alt="Login page " />
+          </figure>
+          
+          <h3>Social Validation</h3>
+          <figure class="cs-figure">
+            <img src="assets/Social Validation.png" alt="Social Validation" />
+          </figure>
+        </section>
+
+        <section class="cs-section" id="accessibility">
+          <h2>Accessibility & Usability</h2>
+          <ul class="cs-ul">
+            <li>Clear visual hierarchy and spacing</li>
+            <li>Readable typography and contrast</li>
+            <li>Touch-friendly buttons for mobile</li>
+            <li>Consistent navigation patterns</li>
+          </ul>
+        </section>
+
+        <section class="cs-section" id="outcome">
+          <h2>Outcome</h2>
+          <p>
+            The final website design successfully translates The Save Point’s in-store community experience into a
+            cohesive digital platform. The interface feels welcoming, easy to navigate, and visually consistent across
+            devices, allowing users to browse games, discover events, and engage with the brand confidently. By
+            balancing clarity for parents with excitement for gamers, the design strengthens trust, encourages repeat
+            visits, and supports The Save Point’s goal of growing its community and online presence.
+          </p>
+        </section>
+
+
+<section class="cs-section" id="prototype">
+  <h2>Interactive Prototype</h2>
+  <figure class="cs-figure cs-figma">
+<iframe class="figma-embed" style="border: 1px solid rgba(255, 7, 7, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/2OsqdmQvvWijuudKubGDRN/A03-The-Save-Point?page-id=48%3A721&node-id=48-955&p=f&viewport=112%2C190%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=48%3A955&embed-host=share" allowfullscreen></iframe>
+
+
+
+    <!-- <iframe
+      class="figma-embed"
+      src="https://www.figma.com/proto/2OsqdmQvvWijuudKubGDRN/A03-The-Save-Point?page-id=48%3A721&node-id=48-955&p=f&viewport=112%2C190%2C0.06&t=W3GIsbXXp0ZKOeYz-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=48%3A955"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe> -->
+  </figure>
+
+  <p class="cs-note">
+    If the embed doesn’t load, open it in Figma:
+    <a href="https://www.figma.com/proto/2OsqdmQvvWijuudKubGDRN/A03-The-Save-Point?page-id=48%3A721&node-id=48-955&p=f&viewport=112%2C190%2C0.06&t=W3GIsbXXp0ZKOeYz-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=48%3A955" target="_blank" rel="noopener">View prototype</a>
+  </p>
+</section>
+
+
+
+
+        <section class="cs-section" id="learning">
+          <h2>Learning</h2>
+          <p>
+            This project reinforced the importance of designing for multiple user groups within a single interface.
+            Balancing the excitement expected by younger gamers with the clarity and reassurance needed by parents
+            required careful use of hierarchy, tone, and interaction design. I learned how subtle visual cues,
+            simplified navigation, and well-designed micro-interactions can reduce cognitive load while still keeping
+            the experience engaging. The project also highlighted how integrating psychological principles into UI
+            decisions helps create designs that feel intuitive, trustworthy, and emotionally resonant rather than purely
+            visual.
+          </p>
+
+          <div class="cs-back-row">
+            <a class="btn" href="index.html">← Back to Home</a>
+          </div>
+        </section>
+
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner footer-centered">
+      <img src="assets/logo.png" alt="Amaan logo" class="footer-logo" />
+      <h3 class="footer-title">Let’s connect — I reply faster than your Wi-Fi 😄</h3>
+
+      <div class="footer-email">
+        <a href="mailto:amaanahmedabadi007@gmail.com">amaanahmedabadi007@gmail.com</a>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <p class="copyright">
+        © <span id="year"></span> Amaan Ahmedabadi. All rights reserved.
+      </p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
