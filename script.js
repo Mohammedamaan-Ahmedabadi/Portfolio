@@ -640,6 +640,18 @@ function randomizeDontPressPosition(){
   dontPressBtn.style.bottom = s.bottom;
 }
 
+if (dontPressBtn) {
+  randomizeDontPressPosition();
+
+  dontPressBtn.addEventListener("click", () => {
+    if (chaosActive) return;
+    dropEverything();
+    focusSpellInput(); // ✅ open mobile keyboard right after click
+  });
+}
+
+window.addEventListener("keydown", handleSpellKey);
+
 
 
 // ===== Journey Map Rectangle Magnifier =====
