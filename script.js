@@ -697,3 +697,36 @@ document.querySelectorAll(".cs-zoom").forEach((wrap) => {
     lens.style.transform = "translate(-9999px, -9999px)";
   });
 });
+
+
+
+// about.js
+
+
+/* =========================
+   ABOUT PAGE: STORY ACCORDION
+   (safe to keep in your main.js)
+========================= */
+(function () {
+  const toggle = document.getElementById("aboutStoryToggle");
+  const panel = document.getElementById("aboutStoryPanel");
+
+  // If not on about page, do nothing
+  if (!toggle || !panel) return;
+
+  function setAccordion(open) {
+    toggle.setAttribute("aria-expanded", String(open));
+    panel.hidden = !open;
+
+    const icon = toggle.querySelector(".about-acc-icon");
+    if (icon) icon.textContent = open ? "–" : "+";
+  }
+
+  // default closed
+  setAccordion(false);
+
+  toggle.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    setAccordion(!isOpen);
+  });
+})();
