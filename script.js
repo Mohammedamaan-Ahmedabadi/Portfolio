@@ -730,3 +730,23 @@ document.querySelectorAll(".cs-zoom").forEach((wrap) => {
     setAccordion(!isOpen);
   });
 })();
+
+
+
+
+
+// Zen garden page 
+
+    fetch("zen-garden-style.css")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("cssOutput").textContent = data;
+      });
+
+    document.getElementById("copyCss").addEventListener("click", () => {
+      navigator.clipboard.writeText(
+        document.getElementById("cssOutput").textContent
+      );
+      alert("CSS copied to clipboard");
+    });
+
