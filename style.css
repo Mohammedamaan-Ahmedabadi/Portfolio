@@ -1420,3 +1420,11 @@ body.chaos .drop {
 html {
   scroll-behavior: smooth;
 }
+
+
+/* Hide gamification button on touch devices (mobile + tablet) */
+@media (hover: none) and (pointer: coarse){
+  .dont-press{
+    display: none !important;
+  }
+}
