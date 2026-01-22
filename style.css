@@ -493,7 +493,7 @@ h1 {
 .project {
   width: 100%;
   max-width: 520px;
-  aspect-ratio: 4 / 5;
+  /* aspect-ratio: 4 / 5; */
   /* controls whole card shape */
   justify-self: center;
 
