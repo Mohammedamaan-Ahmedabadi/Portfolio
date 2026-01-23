@@ -1,0 +1,560 @@
+/* =========================
+   PAGE BACKGROUND
+========================= */
+
+body.project-page{
+  background:#ffffff !important;
+}
+
+.cs{ max-width: var(--max); }
+
+/* Reuse the same topbar + hero styles from project-1.css by keeping class names identical */
+.cs-topbar{
+  display:flex;
+  justify-content:flex-start;
+  margin:14px 0 6px;
+}
+
+.cs-backpill{
+  text-decoration:none;
+  font-weight:800;
+  font-size:12px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(17,19,24,.12);
+  background:rgba(255,255,255,.75);
+  color:rgba(17,19,24,.86);
+}
+
+.cs-hero{ padding-top:12px; }
+
+
+
+
+/* --- Theme variables (scoped) --- */
+.cs-hero-card.zg-hero-space{
+  --glass-bg: rgba(15, 15, 35, 0.70);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --accent-purple: #a78bfa;
+  --accent-blue: #60a5fa;
+  --accent-pink: #f472b6;
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid var(--glass-border);
+
+  /* Space base */
+  background: #0a0a1a;
+
+  /* Glass depth + glow */
+  box-shadow:
+    0 18px 55px rgba(0,0,0,.35),
+    0 0 80px rgba(167, 139, 250, .18);
+
+  /* (Optional) If you want the hero card itself to feel glassy */
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+}
+
+/* --- Space nebula gradient layer (like body::before) --- */
+.cs-hero-card.zg-hero-space::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background: radial-gradient(ellipse at top, #1a1a3a 0%, #0a0a1a 55%, #000000 100%);
+  opacity: 1;
+  pointer-events:none;
+}
+
+/* --- Stardust layer (like body::after) + animation --- */
+.cs-hero-card.zg-hero-space::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.95), transparent),
+    radial-gradient(2px 2px at 60% 70%, rgba(255,255,255,.9), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(255,255,255,.85), transparent),
+    radial-gradient(1px 1px at 80% 10%, rgba(255,255,255,.8), transparent),
+    radial-gradient(2px 2px at 90% 60%, rgba(255,255,255,.9), transparent),
+    radial-gradient(1px 1px at 33% 85%, rgba(255,255,255,.8), transparent),
+    radial-gradient(1px 1px at 75% 45%, rgba(255,255,255,.8), transparent);
+
+  background-repeat: repeat;
+  background-size:
+    200px 200px,
+    300px 300px,
+    150px 150px,
+    250px 250px,
+    180px 180px,
+    220px 220px,
+    280px 280px;
+
+  opacity: 0.6;
+  animation: zg-stardust 30s linear infinite;
+}
+
+@keyframes zg-stardust{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-200px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+/* --- Liquid glass overlay wash (subtle) --- */
+.cs-hero-card.zg-hero-space .zg-glass-wash{
+  position:absolute;
+  inset:-1px;
+  z-index:2;
+  pointer-events:none;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,.05) 0%,
+    rgba(167,139,250,.14) 35%,
+    rgba(96,165,250,.12) 65%,
+    rgba(244,114,182,.06) 100%
+  );
+
+  /* slight “liquid” depth */
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.10);
+  backdrop-filter: blur(18px) saturate(170%);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+}
+
+/* --- Make your hero content sit above layers --- */
+.cs-hero-card.zg-hero-space .cs-hero-top,
+.cs-hero-card.zg-hero-space .cs-hero-grid{
+  position: relative;
+  z-index: 5;
+}
+
+/* Optional: gradient animated headings like Zen Garden */
+.cs-hero-card.zg-hero-space .cs-title,
+.cs-hero-card.zg-hero-space h1,
+.cs-hero-card.zg-hero-space h2,
+.cs-hero-card.zg-hero-space h3{
+  background: linear-gradient(135deg, #ffffff, var(--accent-purple), var(--accent-blue));
+  background-size: 200% 200%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color: transparent;
+  animation: zg-gradientShift 6s ease infinite;
+}
+
+@keyframes zg-gradientShift{
+  0%,100%{ background-position: 0% 50%; }
+  50%{ background-position: 100% 50%; }
+}
+
+/* Keep paragraph text readable */
+.cs-hero-card.zg-hero-space .cs-lede,
+.cs-hero-card.zg-hero-space .cs-meta-label,
+.cs-hero-card.zg-hero-space .cs-meta-value,
+.cs-hero-card.zg-hero-space .cs-tag,
+.cs-hero-card.zg-hero-space .cs-pill{
+  color: var(--text-primary);
+}
+
+/* Pill / tags glass */
+.cs-hero-card.zg-hero-space .cs-pill,
+.cs-hero-card.zg-hero-space .cs-tag{
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+/* Meta card becomes glass */
+.cs-hero-card.zg-hero-space .cs-hero-meta{
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow:
+    0 8px 32px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+/* =========================================================
+   2) PLANETS + SPACESHIPS (add as child divs in hero card)
+   ========================================================= */
+
+/* Planets base */
+.cs-hero-card.zg-hero-space .zg-planet{
+  position:absolute;
+  border-radius:50%;
+  opacity:.85;
+  pointer-events:none;
+  z-index:3;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Earth */
+.cs-hero-card.zg-hero-space .zg-planet.earth{
+  width:220px;
+  height:220px;
+  top: -10px;
+  right: -80px;
+  background-image: url("assets/earth.png"); /* <-- adjust path */
+  animation: zg-orbit1 60s linear infinite, zg-glow1 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 40px rgba(255,107,157,.45));
+}
+
+/* Moon */
+.cs-hero-card.zg-hero-space .zg-planet.moon{
+  width:160px;
+  height:160px;
+  bottom: -40px;
+  left: -60px;
+  background-image: url("assets/moon.png");  /* <-- adjust path */
+  animation: zg-orbit2 80s linear infinite, zg-glow2 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(96,165,250,.45));
+}
+
+/* Jupiter */
+.cs-hero-card.zg-hero-space .zg-planet.jupiter{
+  width:120px;
+  height:120px;
+  top: 55%;
+  right: 12%;
+  background-image: url("assets/jupiter.png"); /* <-- adjust path */
+  animation: zg-orbit3 100s linear infinite, zg-glow3 5s ease-in-out infinite;
+  filter: drop-shadow(0 0 25px rgba(167,139,250,.45));
+}
+
+/* Orbit animations */
+@keyframes zg-orbit1{
+  0%{ transform: rotate(0deg) translateX(60px) rotate(0deg); }
+  100%{ transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+}
+@keyframes zg-orbit2{
+  0%{ transform: rotate(0deg) translateX(45px) rotate(0deg); }
+  100%{ transform: rotate(-360deg) translateX(45px) rotate(360deg); }
+}
+@keyframes zg-orbit3{
+  0%{ transform: rotate(0deg) translateX(35px) rotate(0deg); }
+  100%{ transform: rotate(360deg) translateX(35px) rotate(-360deg); }
+}
+
+/* Glow pulsing */
+@keyframes zg-glow1{ 0%,100%{ opacity:.30; } 50%{ opacity:.52; } }
+@keyframes zg-glow2{ 0%,100%{ opacity:.30; } 50%{ opacity:.62; } }
+@keyframes zg-glow3{ 0%,100%{ opacity:.30; } 50%{ opacity:.42; } }
+
+/* Spaceships base */
+.cs-hero-card.zg-hero-space .zg-ship{
+  position:absolute;
+  pointer-events:none;
+  z-index:4;
+  opacity:.40;
+  border-radius:50%;
+}
+
+/* Ship 1 */
+.cs-hero-card.zg-hero-space .zg-ship.ship1{
+  width:60px;
+  height:20px;
+  background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+  top: 18%;
+  left: -120px;
+  animation: zg-ship1 25s linear infinite;
+  box-shadow: 0 0 20px var(--accent-blue), 0 0 40px var(--accent-blue);
+}
+.cs-hero-card.zg-hero-space .zg-ship.ship1::after{
+  content:"";
+  position:absolute;
+  width:100px;
+  height:2px;
+  background: linear-gradient(90deg, var(--accent-blue), transparent);
+  right:100%;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+/* Ship 2 */
+.cs-hero-card.zg-hero-space .zg-ship.ship2{
+  width:50px;
+  height:15px;
+  background: linear-gradient(90deg, transparent, var(--accent-pink), transparent);
+  bottom: 22%;
+  right: -140px;
+  animation: zg-ship2 30s linear infinite;
+  box-shadow: 0 0 15px var(--accent-pink), 0 0 30px var(--accent-pink);
+}
+
+/* Ship 3 */
+.cs-hero-card.zg-hero-space .zg-ship.ship3{
+  width:70px;
+  height:25px;
+  background: linear-gradient(90deg, transparent, var(--accent-purple), transparent);
+  top: 70%;
+  left: -160px;
+  animation: zg-ship3 20s linear infinite;
+  box-shadow: 0 0 25px var(--accent-purple), 0 0 50px var(--accent-purple);
+}
+
+/* Ship paths */
+@keyframes zg-ship1{
+  0%{ transform: translateX(0) translateY(0); }
+  100%{ transform: translateX(calc(100% + 420px)) translateY(-90px); }
+}
+@keyframes zg-ship2{
+  0%{ transform: translateX(0) translateY(0); }
+  100%{ transform: translateX(calc(-100% - 520px)) translateY(90px); }
+}
+@keyframes zg-ship3{
+  0%{ transform: translateX(0) translateY(0); }
+  100%{ transform: translateX(calc(100% + 520px)) translateY(50px); }
+}
+
+/* =========================================================
+   3) Reduced motion safety
+   ========================================================= */
+@media (prefers-reduced-motion: reduce){
+  .cs-hero-card.zg-hero-space::after,
+  .cs-hero-card.zg-hero-space .zg-planet,
+  .cs-hero-card.zg-hero-space .zg-ship,
+  .cs-hero-card.zg-hero-space .cs-title{
+    animation: none !important;
+  }
+}
+
+
+
+
+.cs-hero-top{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  padding:14px 16px 8px;
+}
+
+.cs-pill{
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.55);
+  border:1px solid rgba(17,19,24,.10);
+}
+
+.cs-hero-grid{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:18px;
+  padding:10px 16px 18px;
+}
+
+.cs-hero-meta{
+  background:rgba(255,210,82,.55);
+  border:1px solid rgba(17,19,24,.10);
+  border-radius:18px;
+  padding:14px;
+  display:grid;
+  gap:12px;
+}
+
+.cs-meta-item{ display:grid; gap:4px; }
+
+.cs-meta-label{
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:rgba(17,19,24,.70);
+}
+
+.cs-meta-value{
+  font-weight:800;
+  color:rgba(17,19,24,.92);
+}
+
+.cs-title{
+  font-family:var(--font-serif);
+  font-size:clamp(26px, 3.2vw, 40px);
+  margin:0 0 8px;
+  letter-spacing:-.02em;
+}
+
+.cs-lede{
+  margin:0 0 12px;
+  color:rgba(17,19,24,.78);
+  line-height:1.7;
+}
+
+.cs-hero-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.cs-tag{
+  font-size:12px;
+  font-weight:900;
+  color:rgba(17,19,24,.78);
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(17,19,24,.10);
+  background:rgba(255,255,255,.55);
+}
+
+/* Body layout */
+.cs-body{
+  display:grid;
+  grid-template-columns:200px 1fr;
+  gap:26px;
+  margin-top:18px;
+}
+
+.cs-side{
+  position:sticky;
+  top:120px;
+  align-self:start;
+
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+
+  padding:12px;
+  border-radius:18px;
+  background: radial-gradient(ellipse at top, #1a1a3a 0%, #0a0a1a 55%, #000000 100%);
+  /* background:rgba(255, 209, 82, 0.37); */
+  border:1px solid rgba(17,19,24,.10);
+}
+
+.cs-side a{
+  text-decoration:none;
+  color:rgba(255, 255, 255, 0.78);
+  font-weight:800;
+  padding:10px 10px;
+  border-radius:14px;
+  /* border:1px solid rgba(17,19,24,.08);
+  background:rgba(255,255,255,.45); */
+
+    background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+.cs-side a:hover{
+  background:rgba(255,255,255,.80);
+  color:rgba(17,19,24,.92);
+}
+
+.cs-main{ min-width:0; }
+
+.cs-section{
+  padding:14px 0 4px;
+  border-bottom:1px solid rgba(17,19,24,.06);
+  margin-bottom:16px;
+  scroll-margin-top: 40vh;
+  scroll-margin-bottom: 40vh;
+}
+
+.cs-section h2{
+  font-family:var(--font-sans);
+  font-size:20px;
+  margin:0 0 10px;
+  letter-spacing:-.01em;
+  color: rgba(11, 47, 127);
+}
+
+.cs-section p{
+  margin:0 0 12px;
+  color:rgba(17,19,24,.78);
+  line-height:1.75;
+}
+
+/* ===== Live embed ===== */
+.cs-embed-actions{
+  display:flex;
+  gap:10px;
+  margin:10px 0 12px;
+  flex-wrap:wrap;
+}
+
+.cs-embed{
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(17,19,24,.10);
+  background:rgba(255,255,255,.60);
+  box-shadow:0 18px 55px rgba(17,19,24,.10);
+}
+
+/* Responsive iframe */
+.cs-embed iframe{
+  width:100%;
+  height:min(74vh, 720px);
+  border:0;
+  display:block;
+  background:#fff;
+}
+
+/* ===== Code block ===== */
+.cs-codebar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:10px 0 10px;
+}
+
+.cs-codehint{
+  font-size:13px;
+  color:rgba(17,19,24,.68);
+  font-weight:700;
+}
+
+.cs-code{
+  margin:0 0 16px;
+  border-radius:18px;
+  border:1px solid rgba(17,19,24,.10);
+  background:radial-gradient(ellipse at top, #1a1a3a 0%, #0a0a1a 55%, #000000 100%);
+  box-shadow:0 18px 55px rgba(17,19,24,.08);
+  padding:14px;
+  overflow:auto;
+  max-height:1220px;
+}
+
+.cs-code code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size:13px;
+  line-height:1.65;
+  color:rgba(255, 255, 255, 0.88);
+  white-space:pre;
+}
+
+.cs-back-row{ margin-top:10px; }
+
+/* Responsive */
+@media (max-width:980px){
+  .cs-body{ grid-template-columns:1fr; }
+
+  .cs-side{
+    position:relative;
+    top:auto;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .cs-hero-grid{ grid-template-columns:1fr; }
+  .cs-hero-meta{ background:rgba(255,210,82,.40); }
+}
+
+/* Smooth scroll */
+html{ scroll-behavior:smooth; }

@@ -1,0 +1,453 @@
+
+body.project-page{
+  background:#fbe2c67c !important;
+}
+
+
+/* about.css — scoped styles only for About page */
+.about-page{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 110px 18px 44px;
+}
+
+/* Layout blocks */
+.about-section{ margin: 22px 0; }
+
+.about-card{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 18px 55px rgba(0,0,0,.25);
+  backdrop-filter: blur(10px);
+}
+h2, h3 {
+    color: rgb(75, 33, 3);
+}
+
+p {
+    color: rgb(120, 57, 12);
+}
+.about-card h2{ margin: 0 0 10px; font-size: 20px; }
+.about-card h3{ margin: 0 0 10px; font-size: 16px; }
+
+.about-card {
+  margin: 0 0 12px;
+  line-height: 1.75;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+/* HERO */
+.about-hero-card{
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 26px;
+  overflow: hidden;
+  padding: 18px;
+}
+
+.about-hero-grid{
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.about-photo{
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.18);
+}
+.about-photo img{
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.about-now{
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,106,0,.25);
+  padding: 16px;
+}
+
+.about-kicker{
+  margin: 0 0 28px;
+  font-weight: 900;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(255, 0, 0, 0.8);
+}
+
+.about-title{
+  margin: 0 0 10px;
+  font-size: clamp(28px, 3vw, 44px);
+  letter-spacing: -.02em;
+}
+
+.about-now-list{
+  margin: 0 0 14px;
+  padding-left: 18px;
+  line-height: 1.9;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.about-actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.about-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  text-decoration: none;
+  font-weight: 900;
+  color: rgba(7, 7, 7, 0.92);
+  background: rgba(255, 255, 255, 0.905);
+}
+
+.about-primary{
+  border-color: rgba(255,106,0,.40);
+  background: rgba(255,106,0,.18);
+}
+.about-primary:hover{ background: rgba(255, 106, 0, 0.645); }
+.about-ghost:hover{ background: rgba(250, 69, 18, 0.238); }
+
+/* Quote */
+.about-quote{
+  margin: 0;
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.10);
+}
+.about-quote p{
+  margin: 0;
+  font-size: clamp(20px, 2vw, 20px);
+  line-height: 1.5;
+  color: rgb(113, 49, 4);
+}
+.about-quote-end{ margin-top: 18px; }
+
+/* Two columns */
+.about-two-col{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.about-list{
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.85;
+  color: rgb(113, 49, 4);
+}
+.about-list li{ margin: 10px 0; }
+.about-list span{ color: rgba(0, 0, 0, 0.55); }
+
+/* Triple columns like your screenshot vibe */
+.about-triple{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+}
+
+.about-pill-list{
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.about-pill-list li{
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  color: rgba(0, 0, 0, 0.84);
+  font-weight: 700;
+}
+
+/* Accordion */
+.about-accordion{ padding: 0; overflow: hidden; }
+
+.about-acc-trigger{
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color:  rgb(75, 33, 3);
+}
+
+.about-acc-title{
+  font-weight: 900;
+  font-size: 16px;
+  text-align: left;
+}
+
+.about-acc-icon{
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.about-acc-panel{
+  border-top: 1px solid rgba(255,255,255,.10);
+  padding: 0 16px 16px;
+}
+
+.about-story{ padding-top: 14px; }
+.about-story h3{
+  margin-top: 16px;
+  color:  rgb(75, 33, 3);
+}
+
+.about-story-image{
+  margin: 14px 0;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+}
+.about-story-image img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-quran{
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255,106,0,.10);
+  border: 1px solid rgba(255,106,0,.25);
+  color: rgba(5, 5, 5, 0.92);
+}
+.about-quran span{ color: rgba(0, 0, 0, 0.65); }
+
+.about-end-note{ color:  rgb(75, 33, 3); }
+
+/* Responsive */
+@media (max-width: 980px){
+  .about-hero-grid{ grid-template-columns: 1fr; }
+  .about-photo img{ min-height: 320px; }
+  .about-two-col{ grid-template-columns: 1fr; }
+  .about-triple{ grid-template-columns: 1fr; }
+}
+
+
+/* 3 cards layout */
+.about-triple-cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* each box/card */
+.about-skill-card{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 18px 55px rgba(0,0,0,.25);
+  backdrop-filter: blur(10px);
+}
+
+.about-skill-card h3{
+    color:  rgb(75, 33, 3);
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+/* chips container */
+.about-chips{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* each chip (not a button) */
+.about-chip{
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,106,0,.25);
+  color: rgb(113, 49, 4);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  user-select: none;
+}
+
+/* optional: subtle hover (still not button) */
+.about-chip:hover{
+  background: rgba(255, 255, 255, 0.268);
+  border-color: rgba(0, 0, 0, 0.788);
+}
+
+/* responsive */
+@media (max-width: 980px){
+  .about-triple-cards{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+/* =========================
+   ABOUT: READ MORE STORY PREVIEW
+========================= */
+
+.about-story-card{
+  overflow:hidden;
+}
+
+.about-story-head{
+  padding-bottom: 10px;
+}
+
+.about-story-title{
+  margin: 0 0 6px;
+}
+
+.about-story-sub{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Preview wrapper behaves like the project-card width/margins automatically
+   because it sits inside .container already */
+.about-story-preview{
+  position: relative;
+  margin-top: 14px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: var(--project-bg);
+  box-shadow: var(--project-shadow);
+  overflow: hidden;
+}
+
+/* Inner content */
+.about-story-content{
+  padding: 18px;
+  line-height: 1.7;
+  color: rgb(75, 33, 3);
+}
+
+/* Default collapsed: show only a few lines */
+.about-story-preview:not(.is-open) .about-story-content{
+  max-height: 220px; /* ~2–3 paragraphs visible (adjust if needed) */
+  overflow: hidden;
+}
+
+/* Fade layer to simulate blur-under feeling (clean + reliable) */
+.about-story-fade{
+  position:absolute;
+  left:0; right:0;
+  bottom:0;
+  height: 120px;
+  pointer-events:none;
+
+  /* "blur under" look using gradient + glass tint */
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 0%,
+    rgba(246,247,251,.65) 45%,
+    rgba(246,247,251,.92) 100%
+  );
+}
+
+/* Only show fade when collapsed */
+.about-story-preview.is-open .about-story-fade{
+  display:none;
+}
+
+/* Button sits on top of fade */
+.about-story-toggle{
+  position:absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  font-weight: 800;
+  cursor: pointer;
+
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+.about-story-toggle:hover{
+  background: var(--btn-bg-hover);
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: var(--btn-shadow-hover);
+}
+
+/* Open state: show full content + move button to bottom in-flow */
+.about-story-preview.is-open .about-story-content{
+  max-height: none;
+}
+
+.about-story-preview.is-open .about-story-toggle{
+  position: static;
+  transform: none;
+  margin: 10px auto 18px;
+  display: flex;
+}
+
+.about-story-preview:not(.is-open) .about-story-toggle{
+  color: rgb(75, 33, 3);
+}
+
+.about-story-preview.is-open .about-story-toggle{
+  color: rgb(75, 33, 3);
+}
+
+.about-story-toggle:hover{
+  color: rgb(255, 106, 0);
+}
+
+/* Responsive padding like your cards */
+@media (max-width: 600px){
+  .about-story-content{
+    padding: 16px;
+  }
+  .about-story-toggle{
+    bottom: 12px;
+  }
+}
