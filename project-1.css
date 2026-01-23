@@ -8,219 +8,235 @@
 /* =========================================================
    PAGE BACKGROUND (Cream White)
 ========================================================= */
-body.project-page{
-  background:#ffffff !important;   /* cream */
+body.project-page {
+  background: #ffffff !important;
+  /* cream */
 }
 
 /* If you are using bg-wrap / blur-layer on this page, keep them neutral */
-body.project-page .bg-wrap{
-  background:#ffffff !important;
+body.project-page .bg-wrap {
+  background: #ffffff !important;
 }
-body.project-page .blur-layer{
-  background:transparent !important;
+
+body.project-page .blur-layer {
+  background: transparent !important;
 }
 
 /* Main wrapper */
-.cs{ max-width: var(--max); }
+.cs {
+  max-width: var(--max);
+}
 
 /* -------------------------
    HERO CARD (Top banner)
 ------------------------- */
 
-.cs-topbar{
-  display:flex;
-  justify-content:flex-start;
-  margin:14px 0 6px;
+.cs-topbar {
+  display: flex;
+  justify-content: flex-start;
+  margin: 14px 0 6px;
 }
 
-.cs-backpill{
-  text-decoration:none;
-  font-weight:800;
-  font-size:12px;
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid rgba(17,19,24,.12);
-  background:rgba(255,255,255,.75);
-  color:rgba(17,19,24,.86);
+.cs-backpill {
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 19, 24, .12);
+  background: rgba(255, 255, 255, .75);
+  color: rgba(17, 19, 24, .86);
 }
 
 
-.cs-hero{ padding-top:12px; }
+.cs-hero {
+  padding-top: 12px;
+}
 
-.cs-hero-card{
-  border-radius:22px;
-  overflow:hidden;
-  border:1px solid rgba(17,19,24,.10);
+.cs-hero-card {
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(17, 19, 24, .10);
   background:
-    linear-gradient(90deg, rgba(255,210,82,.55) 0%, rgba(168,146,255,.35) 70%),
-    rgba(255,255,255,.55);
-  box-shadow:0 18px 55px rgba(17,19,24,.10);
+    linear-gradient(90deg, rgba(255, 210, 82, .55) 0%, rgba(168, 146, 255, .35) 70%),
+    rgba(255, 255, 255, .55);
+  box-shadow: 0 18px 55px rgba(17, 19, 24, .10);
 }
 
-.cs-hero-top{
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-  padding:14px 16px 8px;
+.cs-hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 14px 16px 8px;
 }
 
-.cs-pill{
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  padding:6px 10px;
-  border-radius:999px;
-  background:rgba(255,255,255,.55);
-  border:1px solid rgba(17,19,24,.10);
+.cs-pill {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .55);
+  border: 1px solid rgba(17, 19, 24, .10);
 }
 
-.cs-hero-grid{
-  display:grid;
-  grid-template-columns:220px 1fr;
-  gap:18px;
-  padding:10px 16px 18px;
+.cs-hero-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 18px;
+  padding: 10px 16px 18px;
 }
 
-.cs-hero-meta{
-  background:rgba(255,210,82,.55);
-  border:1px solid rgba(17,19,24,.10);
-  border-radius:18px;
-  padding:14px;
-  display:grid;
-  gap:12px;
+.cs-hero-meta {
+  background: rgba(255, 210, 82, .55);
+  border: 1px solid rgba(17, 19, 24, .10);
+  border-radius: 18px;
+  padding: 14px;
+  display: grid;
+  gap: 12px;
 }
 
-.cs-meta-item{ display:grid; gap:4px; }
-
-.cs-meta-label{
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  color:rgba(17,19,24,.70);
+.cs-meta-item {
+  display: grid;
+  gap: 4px;
 }
 
-.cs-meta-value{
-  font-weight:800;
-  color:rgba(17,19,24,.92);
+.cs-meta-label {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(17, 19, 24, .70);
 }
 
-.cs-hero-main{ padding:2px 0 0; }
-
-.cs-title{
-  font-family:var(--font-serif);
-  font-size:clamp(26px, 3.2vw, 40px);
-  margin:0 0 8px;
-  letter-spacing:-.02em;
+.cs-meta-value {
+  font-weight: 800;
+  color: rgba(17, 19, 24, .92);
 }
 
-.cs-lede{
-  margin:0 0 12px;
-  color:rgba(17,19,24,.78);
-  line-height:1.7;
+.cs-hero-main {
+  padding: 2px 0 0;
+}
+
+.cs-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3.2vw, 40px);
+  margin: 0 0 8px;
+  letter-spacing: -.02em;
+}
+
+.cs-lede {
+  margin: 0 0 12px;
+  color: rgba(17, 19, 24, .78);
+  line-height: 1.7;
   /* max-width:70ch; */
 }
 
-.cs-hero-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
+.cs-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.cs-tag{
-  font-size:12px;
-  font-weight:900;
-  color:rgba(17,19,24,.78);
-  padding:6px 10px;
-  border-radius:999px;
-  border:1px solid rgba(17,19,24,.10);
-  background:rgba(255,255,255,.55);
+.cs-tag {
+  font-size: 12px;
+  font-weight: 900;
+  color: rgba(17, 19, 24, .78);
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 19, 24, .10);
+  background: rgba(255, 255, 255, .55);
 }
 
 /* -------------------------
    PAGE BODY LAYOUT
 ------------------------- */
-.cs-body{
-  display:grid;
-  grid-template-columns:200px 1fr;
-  gap:26px;
-  margin-top:18px;
+.cs-body {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 26px;
+  margin-top: 18px;
 }
 
-.cs-side{
-  position:sticky;
-  top:120px; /* fixed header offset */
-  align-self:start;
+.cs-side {
+  position: sticky;
+  top: 120px;
+  /* fixed header offset */
+  align-self: start;
 
-  display:flex;
-  flex-direction:column;
-  gap:10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
-  padding:12px;
-  border-radius:18px;
-  background:rgba(255, 209, 82, 0.37);
-  border:1px solid rgba(17,19,24,.10);
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(255, 209, 82, 0.37);
+  border: 1px solid rgba(17, 19, 24, .10);
 }
 
-.cs-side a{
-  text-decoration:none;
-  color:rgba(17,19,24,.78);
-  font-weight:800;
-  padding:10px 10px;
-  border-radius:14px;
-  border:1px solid rgba(17,19,24,.08);
-  background:rgba(255,255,255,.45);
+.cs-side a {
+  text-decoration: none;
+  color: rgba(17, 19, 24, .78);
+  font-weight: 800;
+  padding: 10px 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(17, 19, 24, .08);
+  background: rgba(255, 255, 255, .45);
 }
 
-.cs-side a:hover{
-  background:rgba(255,255,255,.80);
-  color:rgba(17,19,24,.92);
+.cs-side a:hover {
+  background: rgba(255, 255, 255, .80);
+  color: rgba(17, 19, 24, .92);
 }
 
-.cs-main{ min-width:0; }
+.cs-main {
+  min-width: 0;
+}
 
 /* -------------------------
    SECTION TYPOGRAPHY
 ------------------------- */
 
-h2, h3 {
-color: rgba(11, 47, 127);
+h2,
+h3 {
+  color: rgba(11, 47, 127);
 }
-.cs-section{
-  padding:14px 0 4px;
-  border-bottom:1px solid rgba(17,19,24,.06);
-  margin-bottom:16px;
+
+.cs-section {
+  padding: 14px 0 4px;
+  border-bottom: 1px solid rgba(17, 19, 24, .06);
+  margin-bottom: 16px;
 
   /* Put anchored section in the CENTER of the screen */
   scroll-margin-top: 40vh;
   scroll-margin-bottom: 40vh;
 }
 
-.cs-section h2{
-  font-family:var(--font-sans);
-  font-size:20px;
-  margin:0 0 10px;
-  letter-spacing:-.01em;
+.cs-section h2 {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  margin: 0 0 10px;
+  letter-spacing: -.01em;
 }
 
-.cs-section p{
-  margin:0 0 12px;
-  color:rgba(17,19,24,.78);
-  line-height:1.75;
+.cs-section p {
+  margin: 0 0 12px;
+  color: rgba(17, 19, 24, .78);
+  line-height: 1.75;
 }
 
-.cs-lead{
-  margin-top:6px;
-  color:rgba(17,19,24,.78);
-  line-height:1.75;
+.cs-lead {
+  margin-top: 6px;
+  color: rgba(17, 19, 24, .78);
+  line-height: 1.75;
 }
 
-.cs-subtitle{
-  margin:18px 0 10px;
-  font-size:16px;
-  font-weight:900;
-  letter-spacing:-.01em;
+.cs-subtitle {
+  margin: 18px 0 10px;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: -.01em;
 }
 
 
@@ -228,26 +244,28 @@ color: rgba(11, 47, 127);
 body.project-page main.cs img,
 body.project-page .cs-main img,
 body.project-page .cs-figure img,
-body.project-page .cs-persona img{
-  width:100%;
-  height:auto !important;
-  object-fit:contain !important;
-  aspect-ratio:auto !important;
-  display:block;
+body.project-page .cs-persona img {
+  width: 100%;
+  height: auto !important;
+  object-fit: contain !important;
+  aspect-ratio: auto !important;
+  display: block;
 }
 
 /* ✅ Make sure header + footer logos stay normal */
 body.project-page .brand-logo,
-body.project-page .footer-logo{
-  width:auto !important;
-  height:32px;               /* header logo size */
-  object-fit:contain !important;
-  display:block;
+body.project-page .footer-logo {
+  width: auto !important;
+  height: 32px;
+  /* header logo size */
+  object-fit: contain !important;
+  display: block;
 }
 
 /* footer logo specific size back */
-body.project-page .footer-logo{
-  height:44px;               /* your original footer logo */
+body.project-page .footer-logo {
+  height: 44px;
+  /* your original footer logo */
 }
 
 
@@ -255,228 +273,412 @@ body.project-page .footer-logo{
 /* -------------------------
    FIGURES / IMAGES
 ------------------------- */
-.cs-figure{
-  margin:14px 0 18px;
-  border-radius:18px;
-  overflow:hidden;
+.cs-figure {
+  margin: 14px 0 18px;
+  border-radius: 18px;
+  overflow: hidden;
 
   /* optional: gives a clean frame without cropping */
-  background:rgba(255,255,255,.55);
+  background: rgba(255, 255, 255, .55);
   /* border:1px solid rgba(17,19,24,.10); */
   /* padding:10px; */
 }
 
-.cs-figure figcaption{
-  font-size:12px;
-  color:rgba(17,19,24,.62);
-  padding:10px 2px 2px;
+.cs-figure figcaption {
+  font-size: 12px;
+  color: rgba(17, 19, 24, .62);
+  padding: 10px 2px 2px;
 }
 
-.cs-figure-tight{
-  margin:0;
+.cs-figure-tight {
+  margin: 0;
 }
 
 /* Row layout for 2 images */
-.cs-figure-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin:12px 0 10px;
+.cs-figure-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 12px 0 10px;
 }
 
 /* Ensure row images never force height */
-.cs-figure-row .cs-figure img{
-  width:100%;
-  height:auto !important;
-  object-fit:contain !important;
+.cs-figure-row .cs-figure img {
+  width: 100%;
+  height: auto !important;
+  object-fit: contain !important;
 }
 
 /* -------------------------
    CALLOUT BOX
 ------------------------- */
-.cs-callout{
-  margin:12px 0 14px;
-  padding:14px 16px;
-  border-radius:18px;
-  background:rgba(255,255,255,.60);
-  border:1px solid rgba(17,19,24,.10);
+.cs-callout {
+  margin: 12px 0 14px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .60);
+  border: 1px solid rgba(17, 19, 24, .10);
 }
 
-.cs-callout h3{
-  margin:0 0 10px;
-  font-size:16px;
-  letter-spacing:-.01em;
+.cs-callout h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  letter-spacing: -.01em;
 }
 
-.cs-callout ul{
-  margin:0;
-  padding-left:18px;
-  color:rgba(17,19,24,.78);
-  line-height:1.8;
+.cs-callout ul {
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(17, 19, 24, .78);
+  line-height: 1.8;
 }
 
 /* -------------------------
    TWO-COLUMN GRID (generic)
 ------------------------- */
-.cs-grid-2{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
+.cs-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
 /* -------------------------
    FINDINGS (align nicely)
 ------------------------- */
-.cs-findings-grid{
-  display:grid;
-  grid-template-columns:500px 1fr;
-  gap:16px;
-  margin:12px 0 14px;
-  align-items:center;  /* nicer alignment with the image */
+.cs-findings-grid {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 16px;
+  margin: 12px 0 14px;
+  align-items: center;
+  /* nicer alignment with the image */
 }
 
-.cs-stat-card{
-  border-radius:18px;
-  border:1px solid rgba(17,19,24,.10);
-  background:rgba(255,210,82,.30);
-  padding:14px;
+.cs-stat-card {
+  border-radius: 18px;
+  border: 1px solid rgba(17, 19, 24, .10);
+  background: rgba(255, 210, 82, .30);
+  padding: 14px;
 }
 
 /* -------------------------
    Persona block
 ------------------------- */
-.cs-persona{
-  display:grid;
-  grid-template-columns:220px 1fr;
-  gap:16px;
-  margin:14px 0 14px;
 
-  border-radius:18px;
-  background:rgba(254, 237, 159);
-  border:1px solid rgba(17,19,24,.10);
-  overflow:hidden;
+
+
+/* Persona Container */
+.cs-persona {
+  display: flex;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: rgba(254, 237, 159);
+  border-radius: 20px;
+  /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); */
 }
 
-.cs-persona-photo{
-  margin:0;
-  background:transparent;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px;
-  
+/* LEFT SIDEBAR */
+.cs-persona-left {
+  flex: 0 0 320px;
+  background: rgba(255, 255, 255, 0.468);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.cs-persona-photo img{
-  border-radius:18px;
-  width:100%;
-  max-width:180px;
-  height:auto !important;
-  object-fit:contain !important;
+.cs-persona-photo {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.cs-persona-body{
-  padding:14px;
+.cs-persona-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.cs-persona-name{
-  margin:0 0 8px;
-  font-size:16px;
-  font-weight:900;
+.cs-persona-id {
+  text-align: center;
 }
 
-.cs-persona-cols{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
+.cs-persona-name {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a202c;
+  background: rgba(11, 47, 127);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.cs-persona-cols h5{
-  margin:10px 0 8px;
-  font-size:13px;
-  font-weight:900;
+.cs-persona-tagline {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.5;
+  font-style: italic;
 }
 
-.cs-persona-cols ul{
-  margin:0;
-  padding-left:18px;
-  color:rgba(17,19,24,.78);
-  line-height:1.75;
-  font-size:14px;
+.cs-persona-chips {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
+
+.cs-persona-chips li {
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #475569;
+  border-left: 3px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.cs-persona-chips li:hover {
+  transform: translateX(4px);
+  border-left-color: #764ba2;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+}
+
+.cs-persona-chips strong {
+  color: rgba(11, 47, 127);
+  font-weight: 600;
+}
+
+/* RIGHT CONTENT */
+.cs-persona-right {
+  flex: 1;
+  min-width: 0;
+}
+
+.cs-persona-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Make Opportunities card span both columns */
+.cs-persona-card:last-child {
+  grid-column: 1 / -1;
+}
+
+.cs-persona-card:last-child ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  column-gap: 2rem;
+}
+
+/* CARDS */
+.cs-persona-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cs-persona-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+.cs-persona-card h5 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a202c;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #667eea;
+  position: relative;
+}
+
+.cs-persona-card h5::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: #764ba2;
+}
+
+.cs-persona-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.cs-persona-card li {
+  padding-left: 1.5rem;
+  position: relative;
+  color: rgba(11, 47, 127);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  transition: color 0.2s ease;
+}
+
+.cs-persona-card li::before {
+  content: '●';
+  position: absolute;
+  left: 0;
+  color: rgba(11, 47, 127);
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.cs-persona-card li:hover {
+  color: #1e293b;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cs-persona {
+    flex-direction: column;
+  }
+
+  .cs-persona-left {
+    flex: 1;
+  }
+
+  .cs-persona-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .cs-persona {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .cs-persona-left {
+    padding: 1.5rem;
+  }
+
+  .cs-persona-card {
+    padding: 1.25rem;
+  }
+
+  .cs-persona-name {
+    font-size: 1.5rem;
+  }
+}
+
+
 
 /* -------------------------
    Bullets blocks
 ------------------------- */
-.cs-bullets{
-  margin:12px 0 12px;
-  padding:12px 14px;
-  border-radius:18px;
-  background:rgba(255,255,255,.60);
-  border:1px solid rgba(17,19,24,.10);
+.cs-bullets {
+  margin: 12px 0 12px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .60);
+  border: 1px solid rgba(17, 19, 24, .10);
 }
 
-.cs-bullets p{
-  margin:0 0 8px;
-  font-weight:800;
+.cs-bullets p {
+  margin: 0 0 8px;
+  font-weight: 800;
 }
 
-.cs-bullets ul{
-  margin:0;
-  padding-left:18px;
-  line-height:1.8;
-  color:rgba(17,19,24,.78);
+.cs-bullets ul {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.8;
+  color: rgba(17, 19, 24, .78);
 }
 
-.cs-bullets-soft{
-  background:rgba(168,146,255,.18);
+.cs-bullets-soft {
+  background: rgba(168, 146, 255, .18);
 }
 
 /* -------------------------
    PHASE SECTION
 ------------------------- */
-.cs-phase{
-  margin:16px 0 18px;
-  padding:14px 16px;
-  border-radius:18px;
-  border:1px solid rgba(17,19,24,.10);
-  background:rgba(254, 237, 159);
+.cs-phase {
+  margin: 16px 0 18px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(17, 19, 24, .10);
+  background: rgba(254, 237, 159);
 }
 
-.cs-phase h3{
-  margin:0 0 12px;
-  font-size:16px;
+.cs-phase h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
 }
 
-.cs-back-row{ margin-top:10px; }
+.cs-back-row {
+  margin-top: 10px;
+}
 
 /* -------------------------
    RESPONSIVE
 ------------------------- */
-@media (max-width:980px){
-  .cs-body{ grid-template-columns:1fr; }
-
-  .cs-side{
-    position:relative;
-    top:auto;
-    flex-direction:row;
-    flex-wrap:wrap;
-    gap:10px;
+@media (max-width:980px) {
+  .cs-body {
+    grid-template-columns: 1fr;
   }
 
-  .cs-hero-grid{ grid-template-columns:1fr; }
-  .cs-hero-meta{ background:rgba(255,210,82,.40); }
+  .cs-side {
+    position: relative;
+    top: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 
-  .cs-grid-2{ grid-template-columns:1fr; }
-  .cs-findings-grid{ grid-template-columns:1fr; }
-  .cs-figure-row{ grid-template-columns:1fr; }
+  .cs-hero-grid {
+    grid-template-columns: 1fr;
+  }
 
-  .cs-persona{ grid-template-columns:1fr; }
-  .cs-persona-cols{ grid-template-columns:1fr; }
+  .cs-hero-meta {
+    background: rgba(255, 210, 82, .40);
+  }
+
+  .cs-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-findings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-figure-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-persona {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-persona-cols {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Smooth scroll */
-html{ scroll-behavior:smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 
 /* ===============================
@@ -484,52 +686,58 @@ html{ scroll-behavior:smooth; }
 ================================ */
 
 /* All persona text */
-.cs-persona{
-  color: #0f3182; /* main persona text color */
+.cs-persona {
+  color: #0f3182;
+  /* main persona text color */
 }
 
 /* Section titles inside persona */
 .cs-persona h4,
-.cs-persona h5{
-  color: #0f3182; /* darker for headings */
+.cs-persona h5 {
+  color: #0f3182;
+  /* darker for headings */
 }
 
 /* List items inside persona */
-.cs-persona li{
+.cs-persona li {
   color: #374151;
 }
 
 /* Optional: soften secondary text */
 .cs-persona p,
-.cs-persona span{
+.cs-persona span {
   color: #0f3182;
 }
 
 /* ===== Journey Map Rectangle Magnifier ===== */
-.cs-zoom{
+.cs-zoom {
   position: relative;
   overflow: hidden;
-  cursor: none;              /* hide default cursor inside */
+  cursor: none;
+  /* hide default cursor inside */
 }
 
-.cs-zoom-img{
+.cs-zoom-img {
   width: 100%;
   height: auto;
   display: block;
 }
 
 /* The rectangular magnifier "glass" */
-.cs-zoom-lens{
+.cs-zoom-lens {
   position: absolute;
   left: 0;
   top: 0;
-  width: 240px;              /* rectangle size */
+  width: 240px;
+  /* rectangle size */
   height: 160px;
-  border-radius: 14px;       /* slightly rounded rectangle */
-  border: 2px solid rgba(17,19,24,.22);
-  box-shadow: 0 14px 38px rgba(17,19,24,.22);
+  border-radius: 14px;
+  /* slightly rounded rectangle */
+  border: 2px solid rgba(17, 19, 24, .22);
+  box-shadow: 0 14px 38px rgba(17, 19, 24, .22);
   background-repeat: no-repeat;
-  background-size: 1000%;     /* zoom strength */
+  background-size: 1000%;
+  /* zoom strength */
   opacity: 0;
   transform: translate(-9999px, -9999px);
   pointer-events: none;
@@ -538,6 +746,6 @@ html{ scroll-behavior:smooth; }
 }
 
 /* Show lens on hover */
-.cs-zoom:hover .cs-zoom-lens{
+.cs-zoom:hover .cs-zoom-lens {
   opacity: 1;
 }
