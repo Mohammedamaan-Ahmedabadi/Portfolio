@@ -370,10 +370,10 @@ body.project-page .footer-logo {
 /* Persona Container */
 .cs-persona {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   background: rgba(254, 237, 159);
   border-radius: 20px;
@@ -385,11 +385,11 @@ body.project-page .footer-logo {
   flex: 0 0 320px;
   background: rgba(255, 255, 255, 0.468);
   border-radius: 16px;
-  padding: 2rem;
+  padding: 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .cs-persona-photo {
@@ -411,7 +411,7 @@ body.project-page .footer-logo {
 
 .cs-persona-name {
   margin: 0 0 0.5rem 0;
-  font-size: 1.75rem;
+  font-size: 1.55rem;
   font-weight: 700;
   color: #1a202c;
   background: rgba(11, 47, 127);
@@ -424,7 +424,7 @@ body.project-page .footer-logo {
   margin: 0;
   font-size: 0.95rem;
   color: #64748b;
-  line-height: 1.5;
+  line-height: 1;
   font-style: italic;
 }
 
@@ -467,7 +467,7 @@ body.project-page .footer-logo {
 .cs-persona-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 /* Make Opportunities card span both columns */
@@ -479,15 +479,15 @@ body.project-page .footer-logo {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
-  column-gap: 2rem;
+  /* column-gap: 2rem; */
 }
 
 /* CARDS */
 .cs-persona-card {
   background: white;
   border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
@@ -498,7 +498,7 @@ body.project-page .footer-logo {
 
 .cs-persona-card h5 {
   margin: 0 0 1rem 0;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #1a202c;
   padding-bottom: 0.75rem;
@@ -522,7 +522,7 @@ body.project-page .footer-logo {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.35rem;
 }
 
 .cs-persona-card li {
