@@ -929,3 +929,223 @@ if (storyLink && storySection) {
     });
   });
 }
+
+
+
+
+
+
+
+
+
+
+// Project 6
+
+/* project-6.js — Posters carousel + fullscreen dialog (matches YOUR HTML)
+   - Builds poster cards inside #posterTrack
+   - Drag-to-scroll (mouse + touch)
+   - Arrows (.gd-btn.prev/.gd-btn.next)
+   - Fullscreen dialog on click (no scroll-to-top)
+*/
+
+(function () {
+  "use strict";
+
+  /* ✅ IMPORTANT: These paths match YOUR current HTML (assets/...) */
+  const posters = [
+    { title: "Typography Poster", desc: "An experimental typography poster crafted entirely from alphabets, exploring form, rhythm, and visual composition.", src: "assets/Typography.jpg", alt: "Type imagery poster" },
+    { title: "Self Branding", desc: "A personal branding poster expressing my design identity through bold typography, layout, and color storytelling.", src: "assets/Self branding post.jpg", alt: "Self branding poster" },
+    { title: "Short Film Poster", desc: "Promotional poster concept designed for a short film, focusing on visual hierarchy and cinematic atmosphere.", src: "assets/Short film Poster.jpg", alt: "Short film poster" },
+    { title: "Survey Poster", desc: "Informational poster created to encourage participation in a research survey using clear layout and engaging visuals.", src: "assets/Survey Poster.png", alt: "Survey poster 1" },
+    { title: "Survey Poster (Alt)", desc: "Alternative design version exploring different color balance and visual emphasis for improved readability.", src: "assets/Survey poster 2.png", alt: "Survey poster 2" },
+    { title: "Survey Poster (Alt 2)", desc: "Final iteration of the survey poster optimized for clarity, contrast, and audience engagement.", src: "assets/Survey poster 3.png", alt: "Survey poster 3" },
+    { title: "Type Imagery", desc: "Visual composition exploring the relationship between letterforms and imagery to communicate mood and meaning.", src: "assets/Mohammedamaan_ahmedabadi_TypeImagery.png", alt: "Typography poster" },
+    { title: "Film Poster", desc: "Graphic layout inspired by film visuals, combining imagery and typography for a strong narrative feel.", src: "assets/Film.jpg", alt: "Film poster" },
+    // { title: "INCAVICO Email Banner", desc: "Short description goes here.", src: "assets/INCAVICO_BANNER_EMAIL.png", alt: "Incavico email banner" },
+    // { title: "INCAVICO Social Post", desc: "Short description goes here.", src: "assets/INCAVICO_Social Media Post.png", alt: "Incavico social media post" }
+  ];
+
+  function escapeHtml(str) {
+    return String(str)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  /* =========================
+     1) BUILD CARDS INTO YOUR TRACK
+  ========================= */
+  const track = document.getElementById("posterTrack");
+  if (!track) {
+    console.warn("posterTrack not found. Make sure #posterTrack exists.");
+    return;
+  }
+
+  track.innerHTML = "";
+
+  posters.forEach((p) => {
+    const card = document.createElement("article");
+    card.className = "gd-poster";
+    card.dataset.src = p.src;
+    card.dataset.title = p.title;
+    card.dataset.desc = p.desc;
+    card.dataset.alt = p.alt || p.title;
+
+    card.innerHTML = `
+      <div class="gd-poster-media">
+        <img src="${escapeHtml(p.src)}" alt="${escapeHtml(p.alt || p.title)}" loading="lazy" draggable="false" />
+      </div>
+      <div class="gd-poster-body">
+        <h4>${escapeHtml(p.title)}</h4>
+        <p>${escapeHtml(p.desc)}</p>
+      </div>
+    `;
+
+    track.appendChild(card);
+
+    // Debug if any image path is wrong
+    const img = card.querySelector("img");
+    img.addEventListener("error", () => console.warn("Poster image failed to load:", p.src));
+  });
+
+  /* =========================
+     2) FULLSCREEN DIALOG (no page jump)
+  ========================= */
+  const dialog = document.getElementById("posterDialog");
+  const dialogImg = document.getElementById("posterDialogImg");
+  const dialogTitle = document.getElementById("posterDialogTitle");
+  const dialogDesc = document.getElementById("posterDialogDesc");
+  const dialogClose = document.getElementById("posterDialogClose");
+
+  let savedScrollY = 0;
+
+  function lockScroll() {
+    savedScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+  }
+
+  function unlockScroll() {
+    const top = document.body.style.top;
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    document.body.style.width = "";
+
+    const y = top ? Math.abs(parseInt(top, 10)) : savedScrollY;
+    window.scrollTo(0, y);
+  }
+
+  function openPosterDialog(card) {
+    if (!dialog || !dialogImg) return;
+
+    dialogImg.src = card.dataset.src || "";
+    dialogImg.alt = card.dataset.alt || card.dataset.title || "Poster";
+    if (dialogTitle) dialogTitle.textContent = card.dataset.title || "";
+    if (dialogDesc) dialogDesc.textContent = card.dataset.desc || "";
+
+    lockScroll();
+    if (typeof dialog.showModal === "function") dialog.showModal();
+    else dialog.setAttribute("open", "");
+  }
+
+  function closePosterDialog() {
+    if (!dialog) return;
+
+    if (typeof dialog.close === "function") dialog.close();
+    else dialog.removeAttribute("open");
+
+    unlockScroll();
+  }
+
+  dialogClose?.addEventListener("click", closePosterDialog);
+
+  dialog?.addEventListener("click", (e) => {
+    if (e.target === dialog) closePosterDialog();
+  });
+
+  dialog?.addEventListener("close", () => {
+    if (document.body.style.position === "fixed") unlockScroll();
+  });
+
+  /* =========================
+     3) DRAG-TO-SCROLL (mouse + touch) + CLICK-TO-OPEN
+  ========================= */
+  let isDown = false;
+  let startX = 0;
+  let startScrollLeft = 0;
+  let dragged = false;
+  const DRAG_THRESHOLD = 8;
+
+  function down(clientX) {
+    isDown = true;
+    dragged = false;
+    track.classList.add("is-dragging");
+    startX = clientX;
+    startScrollLeft = track.scrollLeft;
+  }
+
+  function move(clientX) {
+    if (!isDown) return;
+    const dx = clientX - startX;
+    if (Math.abs(dx) > DRAG_THRESHOLD) dragged = true;
+    track.scrollLeft = startScrollLeft - dx * 1.15;
+  }
+
+  function up() {
+    isDown = false;
+    track.classList.remove("is-dragging");
+    setTimeout(() => (dragged = false), 0);
+  }
+
+  // Mouse
+  track.addEventListener("mousedown", (e) => down(e.clientX));
+  window.addEventListener("mousemove", (e) => move(e.clientX));
+  window.addEventListener("mouseup", up);
+
+  // Touch
+  track.addEventListener("touchstart", (e) => down(e.touches[0].clientX), { passive: true });
+  track.addEventListener("touchmove", (e) => move(e.touches[0].clientX), { passive: true });
+  track.addEventListener("touchend", up);
+
+  // Click poster -> open dialog (but not if dragged)
+  track.addEventListener("click", (e) => {
+    if (dragged) return;
+    if (e.target.closest(".gd-btn")) return;
+
+    const card = e.target.closest(".gd-poster");
+    if (!card) return;
+
+    openPosterDialog(card);
+  });
+
+  /* =========================
+     4) ARROW BUTTONS (classic left/right)
+  ========================= */
+  const prevBtn = document.querySelector(".gd-btn.prev");
+  const nextBtn = document.querySelector(".gd-btn.next");
+
+  function scrollAmount() {
+    return Math.min(520, track.clientWidth * 0.9);
+  }
+
+  prevBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    track.scrollBy({ left: -scrollAmount(), behavior: "smooth" });
+  });
+
+  nextBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    track.scrollBy({ left: scrollAmount(), behavior: "smooth" });
+  });
+})();
+
+
