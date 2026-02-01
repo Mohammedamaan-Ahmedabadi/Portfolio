@@ -1,0 +1,651 @@
+/* project-6.css */
+
+/* ✅ prevent page-level horizontal overflow (keeps carousel scroll inside itself) */
+body.project-page.project-6 {
+    overflow-x: hidden;
+}
+
+/* ✅ makes sure grid children can shrink properly (prevents overflow in flex/grid) */
+.cs-main {
+    min-width: 0;
+}
+
+
+
+body.project-page.project-6 {
+    background: #acbce74d !important;
+}
+
+.cs {
+    max-width: var(--max);
+}
+
+/* Back pill */
+.cs-topbar {
+    display: flex;
+    justify-content: flex-start;
+    margin: 14px 0 6px;
+}
+
+.cs-backpill {
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(17, 19, 24, .12);
+    background: rgba(255, 255, 255, .75);
+    color: rgba(17, 19, 24, .86);
+}
+
+.cs-hero {
+    padding-top: 12px;
+}
+
+/* HERO - clean */
+.gd-hero {
+    border-radius: 22px;
+    border: 1px solid rgba(17, 19, 24, .10);
+    background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(94, 234, 212, .14), transparent 55%),
+        radial-gradient(900px 600px at 85% 20%, rgba(167, 139, 250, .14), transparent 55%),
+        #0b1020;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, .12);
+    overflow: hidden;
+}
+
+.cs-hero-top {
+    padding: 14px 16px 8px;
+}
+
+.cs-pill {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .10);
+    border: 1px solid rgba(255, 255, 255, .16);
+    color: rgba(255, 255, 255, .86);
+}
+
+.cs-hero-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 18px;
+    padding: 10px 16px 18px;
+}
+
+.cs-hero-meta {
+    background: rgba(255, 255, 255, .10);
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 18px;
+    padding: 14px;
+    display: grid;
+    gap: 12px;
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+.cs-meta-label {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .70);
+}
+
+.cs-meta-value {
+    font-weight: 800;
+    color: rgba(255, 255, 255, .90);
+}
+
+.cs-title {
+    font-family: var(--font-serif);
+    font-size: clamp(26px, 3.2vw, 40px);
+    margin: 0 0 8px;
+    letter-spacing: -.02em;
+    color: rgba(255, 255, 255, .96);
+}
+
+.cs-lede {
+    margin: 0 0 12px;
+    color: rgba(255, 255, 255, .80);
+    line-height: 1.7;
+}
+
+.cs-hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.cs-tag {
+    font-size: 12px;
+    font-weight: 900;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, .16);
+    background: rgba(255, 255, 255, .10);
+    color: rgba(255, 255, 255, .82);
+}
+
+/* Layout */
+.cs-body {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 26px;
+    margin-top: 18px;
+}
+
+.cs-side {
+    position: sticky;
+    top: 120px;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 18px;
+    background: rgba(11, 16, 32, .06);
+    border: 1px solid rgba(17, 19, 24, .10);
+}
+
+.cs-side a {
+    text-decoration: none;
+    color: rgba(17, 19, 24, .86);
+    font-weight: 800;
+    padding: 10px 10px;
+    border-radius: 14px;
+    border: 1px solid rgba(17, 19, 24, .10);
+    background: rgba(255, 255, 255, .65);
+}
+
+.cs-side a:hover {
+    background: rgba(11, 16, 32, .92);
+    color: rgba(255, 255, 255, .92);
+    border-color: rgba(11, 16, 32, .92);
+}
+
+.cs-section {
+    padding: 14px 0 4px;
+    border-bottom: 1px solid rgba(17, 19, 24, .06);
+    margin-bottom: 16px;
+    scroll-margin-top: 40vh;
+    scroll-margin-bottom: 40vh;
+}
+
+.cs-section h2 {
+    font-size: 20px;
+    margin: 0 0 10px;
+    letter-spacing: -.01em;
+    color: rgba(11, 47, 127);
+}
+
+.cs-section p {
+    margin: 0 0 12px;
+    color: rgba(17, 19, 24, .78);
+    line-height: 1.75;
+}
+
+/* =========================
+   Simple Carousel (no popup)
+========================= */
+.gd-carousel {
+    margin-top: 14px;
+    border-radius: 18px;
+    border: 1px solid rgba(17, 19, 24, .10);
+    background: rgba(255, 255, 255, .90);
+    box-shadow: 0 18px 55px rgba(17, 19, 24, .06);
+    padding: 14px;
+}
+
+.gd-carousel-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.gd-carousel-title {
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: -.01em;
+}
+
+.gd-carousel-sub {
+    margin: 4px 0 0;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(17, 19, 24, .62);
+}
+
+.gd-carousel-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.gd-iconbtn {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    border: 1px solid rgba(17, 19, 24, .12);
+    background: rgba(255, 255, 255, .80);
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.gd-iconbtn:hover {
+    background: rgba(11, 16, 32, .92);
+    color: #fff;
+    border-color: rgba(11, 16, 32, .92);
+}
+
+.gd-track {
+    display: flex;
+    gap: 12px;
+    overflow: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.gd-track::-webkit-scrollbar {
+    height: 10px;
+}
+
+.gd-track::-webkit-scrollbar-thumb {
+    background: rgba(17, 19, 24, .12);
+    border-radius: 999px;
+}
+
+/* Poster card */
+.gd-poster {
+    flex: 0 0 min(420px, 88%);
+    scroll-snap-align: start;
+    border-radius: 18px;
+    border: 1px solid rgba(17, 19, 24, .10);
+    overflow: hidden;
+    background: #0b1020;
+}
+
+.gd-poster-media{
+  width:100%;
+  height:auto;              /* ✅ remove fixed height */
+  display:block;
+  background:
+    radial-gradient(900px 600px at 20% 20%, rgba(94,234,212,.10), transparent 50%),
+    radial-gradient(900px 600px at 80% 30%, rgba(167,139,250,.10), transparent 55%),
+    #0b1020;
+}
+
+.gd-poster-media img{
+  width:100%;
+  height:auto;              /* ✅ let image size naturally */
+  object-fit: contain;      /* ✅ always show full poster */
+  display:block;
+  pointer-events:none;
+  user-select:none;
+}
+
+
+.gd-poster-body {
+    padding: 12px;
+    background: rgba(255, 255, 255, .96);
+    border-top: 1px solid rgba(17, 19, 24, .08);
+}
+
+.gd-poster-body h4 {
+    margin: 0 0 6px;
+    font-size: 14px;
+}
+
+.gd-poster-body p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(17, 19, 24, .72);
+}
+
+/* =========================
+   Branding grid
+========================= */
+.gd-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.gd-card {
+    border-radius: 18px;
+    border: 1px solid rgba(17, 19, 24, .10);
+    background: rgba(255, 255, 255, .92);
+    box-shadow: 0 18px 55px rgba(17, 19, 24, .06);
+    overflow: hidden;
+}
+
+.gd-card-top {
+    padding: 12px;
+    border-bottom: 1px solid rgba(17, 19, 24, .08);
+}
+
+.gd-card-title {
+    margin: 0;
+    font-size: 14px;
+}
+
+.gd-card-sub {
+    margin: 4px 0 0;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(17, 19, 24, .62);
+}
+
+.gd-card-body {
+    padding: 12px;
+}
+
+.gd-card-desc {
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(17, 19, 24, .76);
+}
+
+.gd-images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.gd-img{
+  border-radius:14px;
+  border:1px solid rgba(17,19,24,.10);
+  background:#0b1020;
+  overflow:hidden;
+}
+
+.gd-img.is-tall {
+    grid-column: 1 / -1;
+    aspect-ratio: 3 / 4;
+}
+
+.gd-img img{
+  width:100%;
+  height:auto;        /* let image keep its ratio */
+  object-fit: contain;
+  display:block;
+  user-select:none;
+}
+
+
+/* Responsive */
+@media (max-width:980px) {
+    .cs-body {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-side {
+        position: relative;
+        top: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .cs-hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gd-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Enable smooth touch scrolling */
+.gd-track {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    cursor: grab;
+}
+
+.gd-track.is-dragging {
+    cursor: grabbing;
+    user-select: none;
+}
+
+.gd-track.is-dragging img {
+    pointer-events: none;
+}
+
+.gd-carousel {
+    position: relative;
+}
+
+/* Track stays scrollable */
+.gd-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem 3.5rem;
+    /* space for buttons */
+}
+
+/* Buttons (classic overlay style) */
+.gd-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    font-size: 28px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    transition: transform .2s ease, background .2s ease;
+    z-index: 5;
+}
+
+.gd-btn:hover {
+    transform: translateY(-50%) scale(1.05);
+    background: #fff;
+}
+
+.gd-btn.prev {
+    left: 10px;
+}
+
+.gd-btn.next {
+    right: 10px;
+}
+
+/* Hide buttons on very small screens (optional – swipe only) */
+@media(max-width:600px) {
+    .gd-btn {
+        display: none;
+    }
+}
+
+
+
+
+
+/* =========================
+   Fullscreen viewer (dialog)
+========================= */
+.gd-lightbox {
+    width: min(1100px, calc(100vw - 28px));
+    height: min(92vh, 920px);
+    border: 0;
+    padding: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(10, 10, 20, 0.95);
+    box-shadow: 0 30px 120px rgba(0, 0, 0, .45);
+}
+
+.gd-lightbox::backdrop {
+    background: rgba(0, 0, 0, .55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.gd-lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, .18);
+    background: rgba(255, 255, 255, .10);
+    color: rgba(255, 255, 255, .90);
+    font-size: 24px;
+    font-weight: 800;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.gd-lightbox-close:hover {
+    background: rgba(255, 255, 255, .18);
+}
+
+.gd-lightbox-figure {
+    margin: 0;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.gd-lightbox-figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background:
+        radial-gradient(900px 600px at 20% 20%, rgba(94, 234, 212, .10), transparent 55%),
+        radial-gradient(900px 600px at 80% 30%, rgba(167, 139, 250, .10), transparent 60%),
+        #0b1020;
+}
+
+.gd-lightbox-cap {
+    padding: 12px 14px;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    background: rgba(255, 255, 255, .06);
+}
+
+.gd-lightbox-cap h4 {
+    margin: 0 0 4px;
+    color: rgba(255, 255, 255, .92);
+    font-size: 14px;
+}
+
+.gd-lightbox-cap p {
+    margin: 0;
+    color: rgba(255, 255, 255, .72);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* optional: show click affordance without changing layout */
+.gd-poster-media {
+    cursor: zoom-in;
+}
+
+
+/* Prevent layout shift when locking scroll */
+body.gd-lock {
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+/* =========================
+   Fullscreen Poster Viewer Fix
+========================= */
+
+.gd-lightbox{
+  width:100vw;
+  height:100vh;
+  max-width:none;
+  max-height:none;
+  padding:0;
+  border:none;
+  background: rgba(11,16,32,.92);
+}
+
+.gd-lightbox::backdrop{
+  background: rgba(11,16,32,.92);
+}
+
+/* Center everything */
+.gd-lightbox-figure{
+  width:100%;
+  height:100%;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  padding:20px;
+  box-sizing:border-box;
+}
+
+/* THIS IS THE IMPORTANT PART */
+#posterDialogImg{
+  max-width:100%;
+  max-height:85vh;   /* leaves space for title/desc */
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+  border-radius:14px;
+  box-shadow:0 20px 80px rgba(0,0,0,.45);
+}
+
+/* Caption */
+.gd-lightbox-cap{
+  text-align:center;
+  max-width:900px;
+  color:#fff;
+}
+
+.gd-lightbox-cap h4{
+  margin:0 0 6px;
+  font-size:18px;
+}
+
+.gd-lightbox-cap p{
+  margin:0;
+  font-size:14px;
+  color:rgba(255,255,255,.75);
+}
+
+/* Close button */
+.gd-lightbox-close{
+  position:fixed;
+  top:18px;
+  right:18px;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:none;
+  background:rgba(255,255,255,.92);
+  font-size:26px;
+  font-weight:600;
+  cursor:pointer;
+  z-index:10;
+}

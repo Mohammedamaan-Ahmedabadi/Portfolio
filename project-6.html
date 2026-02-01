@@ -1,0 +1,414 @@
+<!-- project-6.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Graphic Design — Posters & Branding</title>
+    <meta name="description" content="Project: Graphic design posters, logo explorations, and branding sheets." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="project-6.css" />
+    <link rel="icon" href="/favicon.png" type="image/png">
+</head>
+
+<!-- ✅ FIX 1: add project-6 class -->
+
+<body class="project-page project-6">
+
+    <!-- Header / Nav (same as index) -->
+    <header>
+        <div class="container nav">
+            <a class="brand" href="index.html" aria-label="Go to home">
+                <img src="assets/logo.png" alt="Amaan logo" class="brand-logo" />
+            </a>
+
+            <nav class="nav-links" aria-label="Primary navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="resume.pdf" target="_blank" rel="noopener">My Resume</a>
+            </nav>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="mobileMenu"
+                aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu" hidden>
+            <div class="container mobile-menu-inner">
+                <a class="mobile-link" href="index.html">Home</a>
+                <a class="mobile-link" href="about.html">About</a>
+                <a class="mobile-link" href="resume.pdf" target="_blank" rel="noopener">My Resume</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container cs">
+
+        <!-- Top back pill -->
+        <div class="cs-topbar">
+            <a class="cs-backpill" href="index.html">← Back to home</a>
+        </div>
+
+        <!-- HERO -->
+        <section class="cs-hero" aria-label="Project hero">
+            <!-- ✅ FIX 2: add gd-hero class so .gd-hero styles apply -->
+            <div class="cs-hero-card gd-hero">
+                <div class="cs-hero-top">
+                    <span class="cs-pill">Graphic Design</span>
+                </div>
+
+                <div class="cs-hero-grid">
+                    <aside class="cs-hero-meta">
+                        <div class="cs-meta-item">
+                            <div class="cs-meta-label">Focus</div>
+                            <div class="cs-meta-value">Posters + Branding</div>
+                        </div>
+
+                        <div class="cs-meta-item">
+                            <div class="cs-meta-label">Deliverables</div>
+                            <div class="cs-meta-value">Poster Series, Logo Sheets</div>
+                        </div>
+
+                        <div class="cs-meta-item">
+                            <div class="cs-meta-label">Tools</div>
+                            <div class="cs-meta-value">Illustrator / Photoshop</div>
+                        </div>
+                    </aside>
+
+                    <div class="cs-hero-main">
+                        <h1 class="cs-title">Posters & Logo Branding Sheets</h1>
+                        <p class="cs-lede">
+                   A selection of graphic design deliverables focused on poster design and branding system development.
+                        </p>
+
+                        <div class="cs-hero-tags">
+                            <span class="cs-tag">Posters</span>
+                            <span class="cs-tag">Branding</span>
+                            <span class="cs-tag">Logos</span>
+                            <span class="cs-tag">2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BODY -->
+        <section class="cs-body">
+
+            <!-- Left mini nav -->
+            <nav class="cs-side" aria-label="Project sections">
+                <a href="#posters">Posters</a>
+                <a href="#branding">Logo & Branding Sheets</a>
+            </nav>
+
+            <!-- Main column -->
+            <article class="cs-main">
+
+                <!-- =========================
+             POSTERS CAROUSEL
+        ========================== -->
+                <section class="cs-section" id="posters">
+                    <h2>Poster Designs</h2>
+                    <p>
+                        Browse through a range of poster designs where typography, imagery, and layout come together to communicate strong visual narratives.
+                    </p>
+
+                    <div class="gd-carousel">
+
+                        <!-- overlay buttons (classic left/right) -->
+                        <button class="gd-btn prev" type="button" aria-label="Previous poster">‹</button>
+                        <button class="gd-btn next" type="button" aria-label="Next poster">›</button>
+
+                        <div class="gd-carousel-head">
+                            <div>
+                                <h3 class="gd-carousel-title">Poster Carousel</h3>
+                                <p class="gd-carousel-sub">Drag / mouse-wheel / swipe to scroll</p>
+                            </div>
+                        </div>
+
+                        <!-- ✅ FIX 3: use gd-poster structure that your CSS targets -->
+                        <div class="gd-track" id="posterTrack">
+
+                            <div class="gd-poster">
+                                <div class="gd-poster-media">
+                                    <img src="assets/Typography.jpg"
+                                        alt="Type imagery poster">
+                                </div>
+                                <div class="gd-poster-body">
+                                    <h4>Typography Poster</h4>
+                                    <p>An experimental typography poster crafted entirely from alphabets, exploring form, rhythm, and visual composition.</p>
+                                </div>
+                            </div>
+
+                            <div class="gd-poster">
+                                <div class="gd-poster-media">
+                                    <img src="assets/Self branding post.jpg" alt="Self branding poster">
+                                </div>
+                                <div class="gd-poster-body">
+                                    <h4>Self Branding</h4>
+                                    <p>A personal branding poster expressing my design identity through bold typography, layout, and color storytelling.</p>
+                                </div>
+                            </div>
+
+                            <div class="gd-poster">
+                                <div class="gd-poster-media">
+                                    <img src="assets/Short film Poster.jpg" alt="Short film poster">
+                                </div>
+                                <div class="gd-poster-body">
+                                    <h4>Short Film Poster</h4>
+                                    <p>Promotional poster concept designed for a short film, focusing on visual hierarchy and cinematic atmosphere.</p>
+                                </div>
+                            </div>
+
+                            <div class="gd-poster">
+                                <div class="gd-poster-media">
+                                    <img src="assets/Survey Poster.png" alt="Survey poster 1">
+                                </div>
+                                <div class="gd-poster-body">
+                                    <h4>Survey Poster</h4>
+                                    <p>Informational poster created to encourage participation in a research survey using clear layout and engaging visuals.</p>
+                                </div>
+                            </div>
+
+                            <div class="gd-poster">
+                                <div class="gd-poster-media">
+                                    <img src="assets/Survey poster 2.png" alt="Survey poster 2">
+                                </div>
+                                <div class="gd-poster-body">
+                                    <h4>Survey Poster (Alt)</h4>
+                                    <p>Alternative design version exploring different color balance and visual emphasis for improved readability.</p>
+                                </div>
+                            </div>
+
+                            <div class="gd-poster">
+                                <div class="gd-poster-media">
+                                    <img src="assets/Survey poster 3.png" alt="Survey poster 3">
+                                </div>
+                                <div class="gd-poster-body">
+                                    <h4>Survey Poster (Alt 2)</h4>
+                                    <p>Final iteration of the survey poster optimized for clarity, contrast, and audience engagement.</p>
+                                </div>
+                            </div>
+
+                            <div class="gd-poster">
+                                <div class="gd-poster-media">
+                                    <img src="assets/Mohammedamaan_ahmedabadi_TypeImagery.png" alt="Typography poster">
+                                </div>
+                                <div class="gd-poster-body">
+                                    <h4>Type Imagery</h4>
+                                    <p>Visual composition exploring the relationship between letterforms and imagery to communicate mood and meaning.</p>
+                                </div>
+                            </div>
+
+                            <div class="gd-poster">
+                                <div class="gd-poster-media">
+                                    <img src="assets/Film.jpg" alt="Film poster">
+                                </div>
+                                <div class="gd-poster-body">
+                                    <h4>Film Poster</h4>
+                                    <p>Graphic layout inspired by film visuals, combining imagery and typography for a strong narrative feel.</p>
+                                </div>
+                            </div>
+
+                            <!-- <div class="gd-poster">
+                                <div class="gd-poster-media">
+                                    <img src="assets/INCAVICO_BANNER_EMAIL.png" alt="Incavico email banner">
+                                </div>
+                                <div class="gd-poster-body">
+                                    <h4>INCAVICO Email Banner</h4>
+                                    <p>Short description goes here.</p>
+                                </div>
+                            </div>
+
+                            <div class="gd-poster">
+                                <div class="gd-poster-media">
+                                    <img src="assets/INCAVICO_Social Media Post.png" alt="Incavico social media post">
+                                </div>
+                                <div class="gd-poster-body">
+                                    <h4>INCAVICO Social Post</h4>
+                                    <p>Short description goes here.</p> -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- =========================
+             LOGO / BRANDING SHEETS
+        ========================== -->
+                <section class="cs-section" id="branding">
+                    <h2>Logo Design & Branding Sheets</h2>
+                    <p>
+                        A collection of logo explorations and branding sheets highlighting concept development, design process, and finalized visual identity systems.
+                    </p>
+
+                    <div class="gd-grid">
+
+                        <!-- Self Branding: includes 3 pages (sheet + 2 sketches) -->
+                        <div class="gd-card">
+                            <div class="gd-card-top">
+                                <h3 class="gd-card-title">Self Branding</h3>
+                                <p class="gd-card-sub">Brand sheet + sketch process</p>
+                            </div>
+
+                            <div class="gd-card-body">
+                                <p class="gd-card-desc">Personal logo exploration including hand-drawn sketches, refinement stages, and the final branding sheet.</p>
+
+                                <div class="gd-images">
+                                    <div class="gd-img is-tall">
+                                        <img src="assets/Self  branding.jpg" alt="Self branding sheet">
+                                    </div>
+                                    <div class="gd-img">
+                                        <img src="assets/Self Branding Sketch1.jpg" alt="Self branding sketch 1">
+                                    </div>
+                                    <div class="gd-img">
+                                        <img src="assets/Self branding sketch 2.jpg" alt="Self branding sketch 2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slower Shop: includes sheet + thumbnails -->
+                        <div class="gd-card">
+                            <div class="gd-card-top">
+                                <h3 class="gd-card-title">Modern Flower Shop - Petal Alchemy</h3>
+                                <p class="gd-card-sub">Logo sheet + thumbnails</p>
+                            </div>
+
+                            <div class="gd-card-body">
+                                <p class="gd-card-desc">Logo development process showcasing early thumbnail concepts and the finalized modern flower shop logo system.</p>
+
+                                <div class="gd-images">
+                                    <div class="gd-img is-tall">
+                                        <img src="assets/Slower shop.jpg" alt="Slower shop logo sheet">
+                                    </div>
+                                    <div class="gd-img ">
+                                        <img src="assets/Thumbnails.jpg" alt="Slower shop thumbnails">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ottawa Dog Rescue -->
+                        <div class="gd-card">
+                            <div class="gd-card-top">
+                                <h3 class="gd-card-title">Ottawa Dog Rescue</h3>
+                                <p class="gd-card-sub">Branding / logo sheet</p>
+                            </div>
+
+                            <div class="gd-card-body">
+                                <p class="gd-card-desc">Branding sheet presenting logo variations designed to reflect trust, care, and community values.</p>
+
+                                <div class="gd-images">
+                                    <div class="gd-img is-tall">
+                                        <img src="assets/Ottawa Dog rescue.jpg" alt="Ottawa Dog Rescue sheet">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Terror Studio -->
+                        <div class="gd-card">
+                            <div class="gd-card-top">
+                                <h3 class="gd-card-title">Terror Studio</h3>
+                                <p class="gd-card-sub">Branding / logo sheet</p>
+                            </div>
+
+                            <div class="gd-card-body">
+                                <p class="gd-card-desc">Logo design variations exploring color, contrast, and form for a creative studio identity.</p>
+
+                                <div class="gd-images">
+                                    <div class="gd-img is-tall">
+                                        <img src="assets/Terror Studio.png" alt="Terror Studio sheet">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bluprint -->
+                        <div class="gd-card">
+                            <div class="gd-card-top">
+                                <h3 class="gd-card-title">Bluprint</h3>
+                                <p class="gd-card-sub">Branding / logo sheet</p>
+                            </div>
+
+                            <div class="gd-card-body">
+                                <p class="gd-card-desc">Branding sheet highlighting logo structure, typography, and color usage for a cohesive brand system. inspired by the Toronto Blue Jays</p>
+
+                                <div class="gd-images">
+                                    <div class="gd-img is-tall">
+                                        <img src="assets/Bluprint.jpg" alt="Bluprint sheet">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="cs-back-row">
+                        <a class="btn" href="index.html">← Back to Home</a>
+                    </div>
+                </section>
+
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-inner footer-centered">
+            <img src="assets/logo.png" alt="Amaan logo" class="footer-logo" />
+            <h3 class="footer-title">Let’s connect — I reply faster than your Wi-Fi 😄</h3>
+
+            <div class="footer-email">
+                <a href="mailto:amaanahmedabadi007@gmail.com">amaanahmedabadi007@gmail.com</a>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/amaan-ahmedabadi-ux-designer/" target="_blank"
+                    rel="noopener">LinkedIn</a>
+                <a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a>
+                <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            </div>
+
+            <p class="copyright">
+                © <span id="year"></span> Amaan Ahmedabadi. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <!-- Fullscreen Poster Viewer (no design change) -->
+    <dialog class="gd-lightbox" id="posterDialog" aria-label="Poster fullscreen viewer">
+        <button class="gd-lightbox-close" id="posterDialogClose" type="button" aria-label="Close">×</button>
+
+        <figure class="gd-lightbox-figure">
+            <img id="posterDialogImg" alt="" />
+            <figcaption class="gd-lightbox-cap">
+                <h4 id="posterDialogTitle"></h4>
+                <p id="posterDialogDesc"></p>
+            </figcaption>
+        </figure>
+    </dialog>
+
+    <!-- Your existing script.js -->
+    <script src="script.js"></script>
+
+    <!-- NOTE:
+    Your CSS will now work immediately.
+    The carousel buttons + drag/swipe behavior comes from your existing JS if you already added it.
+    If you want, paste your current project-6 JS snippet and I’ll fix ONLY the selectors (no design change).
+  -->
+</body>
+
+</html>
