@@ -1149,3 +1149,15 @@ if (storyLink && storySection) {
 })();
 
 
+// Optional small enhancement (keeps it light and modern)
+
+document.querySelectorAll(".img-card img, .compare-images img").forEach(img=>{
+  img.addEventListener("mouseenter",()=>{
+    img.style.filter="brightness(1.05)";
+  });
+
+  img.addEventListener("mouseleave",()=>{
+    img.style.filter="";
+  });
+});
+
