@@ -1149,7 +1149,6 @@ if (storyLink && storySection) {
 })();
 
 
-// Optional small enhancement (keeps it light and modern)
 
 document.querySelectorAll(".img-card img, .compare-images img").forEach(img=>{
   img.addEventListener("mouseenter",()=>{
